@@ -6,8 +6,8 @@ font-family:'Poppins', sans-serif;
 }
 
 body{
-background:#f5f7fb;
-color:#333;
+background:#e9ecef; /* Gris claro de la 1ra paleta */
+color:#212529; /* Gris oscuro de la 1ra paleta */
 }
 
 .header{
@@ -27,8 +27,13 @@ gap:20px;
 
 nav a{
 text-decoration:none;
-color:#333;
+color:#253441; /* Gris azulado oscuro de la 3ra paleta */
 font-weight:500;
+transition: 0.3s;
+}
+
+nav a:hover{
+color:#7b2cbf; /* Morado de la 2da paleta */
 }
 
 /* TITULO */
@@ -38,6 +43,7 @@ text-align:center;
 margin-top:60px;
 margin-bottom:30px;
 font-size:32px;
+color:#140842; /* Morado noche de la 2da paleta */
 }
 
 /* CONTENEDOR */
@@ -75,37 +81,38 @@ margin:15px 0;
 .course-card p{
 font-size:14px;
 margin-bottom:15px;
+color:#495057; /* Gris medio de la 1ra paleta */
 }
 
 .info{
 margin-bottom:15px;
+color:#2e4052; /* Gris azulado de la 3ra paleta */
 }
 
 .subscribe{
 padding:10px 20px;
 border:none;
-background:#3f51b5;
+background:#5a189a; /* Morado intenso de la 2da paleta */
 color:white;
 border-radius:6px;
 cursor:pointer;
+transition: 0.3s;
 }
 
 .subscribe:hover{
-background:#2f3fa3;
+background:#3c096c; /* Morado más oscuro de la 2da paleta */
 }
-
-
 
 .level{
 display:inline-block;
-background:#e3e8ff;
-color:#3f51b5;
+background:#e0aaff; /* Morado pastel de la 2da paleta */
+color:#3c096c; /* Morado oscuro de la 2da paleta */
 padding:5px 10px;
 border-radius:5px;
 font-size:12px;
 margin-bottom:10px;
+font-weight: 600;
 }
-
 
 /* FOOTER */
 
@@ -113,6 +120,6 @@ footer{
 margin-top:60px;
 text-align:center;
 padding:20px;
-background:#1a237e;
+background:#253441; /* Gris azulado oscuro de la 3ra paleta */
 color:white;
 }

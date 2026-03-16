@@ -6,8 +6,8 @@ font-family:'Poppins', sans-serif;
 }
 
 body{
-background:#f5f7fb;
-color:#333;
+background:#e9ecef; /* Gris claro (Fila 1) */
+color:#212529; /* Gris oscuro (Fila 1) */
 }
 
 /* HEADER */
@@ -29,8 +29,13 @@ gap:20px;
 
 nav a{
 text-decoration:none;
-color:#333;
+color:#2e4052; /* Gris azulado (Fila 3) */
 font-weight:500;
+transition: 0.3s;
+}
+
+nav a:hover{
+color:#7b2cbf; /* Morado (Fila 2) */
 }
 
 /* CURSOS */
@@ -43,11 +48,12 @@ text-align:center;
 .courses h2{
 font-size:32px;
 margin-bottom:10px;
+color:#140842; /* Morado profundo (Fila 2) */
 }
 
 .courses p{
 margin-bottom:40px;
-color:#555;
+color:#495057; /* Gris medio (Fila 1) */
 }
 
 /* CONTENEDOR */
@@ -82,11 +88,13 @@ margin-bottom:10px;
 
 .course-card h3{
 margin-bottom:5px;
+color:#253441; /* Azul pizarra (Fila 3) */
 }
 
 .course-card p{
 font-size:14px;
 margin-bottom:10px;
+color:#435966; /* Gris azulado medio (Fila 3) */
 }
 
 /* NIVEL */
@@ -94,11 +102,12 @@ margin-bottom:10px;
 .level{
 display:inline-block;
 font-size:12px;
-background:#e3e8ff;
-color:#3f51b5;
+background:#e0aaff; /* Morado pastel claro (Fila 2) */
+color:#3c096c; /* Morado muy oscuro (Fila 2) */
 padding:5px 10px;
 border-radius:5px;
 margin-bottom:10px;
+font-weight: 600;
 }
 
 /* BOTON */
@@ -106,10 +115,15 @@ margin-bottom:10px;
 .course-card button{
 padding:10px 15px;
 border:none;
-background:#3f51b5;
+background:#5a189a; /* Morado intenso (Fila 2) */
 color:white;
 border-radius:6px;
 cursor:pointer;
+transition: 0.3s;
+}
+
+.course-card button:hover{
+background:#3c096c; /* Morado oscuro (Fila 2) */
 }
 
 /* FOOTER */
@@ -117,7 +131,7 @@ cursor:pointer;
 footer{
 margin-top:60px;
 text-align:center;
-padding:20px;
-background:#1a237e;
+padding:40px;
+background:#253441; /* Gris azulado oscuro (Fila 3) */
 color:white;
 }

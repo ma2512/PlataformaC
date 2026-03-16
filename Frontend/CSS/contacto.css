@@ -6,14 +6,13 @@ font-family:'Poppins', sans-serif;
 }
 
 body{
-background:#f5f7fb;
-color:#333;
+background:#e9ecef; /* Gris claro neutro (Fila 1) */
+color:#212529; /* Gris oscuro (Fila 1) */
 }
 
 /* HEADER */
 
 .header{
-
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -32,9 +31,13 @@ gap:20px;
 
 nav a{
 text-decoration:none;
-color:#333;
+color:#253441; /* Gris azulado (Fila 3) */
 font-weight:500;
+transition: 0.3s;
+}
 
+nav a:hover{
+color:#7b2cbf; /* Morado vibrante (Fila 2) */
 }
 
 /* SECCION CONTACTO */
@@ -48,12 +51,12 @@ text-align:center;
 .contact-section h2{
 font-size:32px;
 margin-bottom:10px;
-
+color:#140842; /* Morado noche (Fila 2) */
 }
 
 .contact-section p{
 margin-bottom:40px;
-color:#555;
+color:#495057; /* Gris medio (Fila 1) */
 
 }
 
@@ -74,7 +77,6 @@ background:white;
 padding:40px;
 border-radius:10px;
 width:350px;
-
 box-shadow:0 5px 20px rgba(0,0,0,0.05);
 
 }
@@ -89,15 +91,22 @@ margin-bottom:15px;
 .input-group label{
 font-size:14px;
 margin-bottom:5px;
-
+color:#2e4052; /* Gris azulado (Fila 3) */
+text-align: left;
 }
 
 .input-group input,
 .input-group textarea{
 padding:10px;
 border-radius:5px;
-border:1px solid #ccc;
+border:1px solid #ced4da; /* Gris (Fila 1) */
+outline: none;
+transition: 0.3s;
+}
 
+.input-group input:focus,
+.input-group textarea:focus{
+border-color:#9d4edd; /* Morado (Fila 2) */
 }
 
 textarea{
@@ -111,12 +120,18 @@ resize:none;
 .contact-form button{
 margin-top:10px;
 padding:12px;
-background:#3f51b5;
+background:#5a189a; /* Morado intenso (Fila 2) */
 color:white;
 border:none;
 border-radius:6px;
 cursor:pointer;
+width: 100%;
+font-weight: 500;
+transition: 0.3s;
+}
 
+.contact-form button:hover{
+background:#3c096c; /* Morado más oscuro (Fila 2) */
 }
 
 /* INFO */
@@ -129,12 +144,12 @@ max-width:250px;
 
 .contact-info h3{
 margin-bottom:10px;
-
+color:#253441; /* Azul pizarra (Fila 3) */
 }
 
 .contact-info p{
 margin-bottom:8px;
-
+color:#58727a; /* Azul grisáceo suave (Fila 3) */
 }
 
 /* FOOTER */
@@ -143,7 +158,7 @@ footer{
 margin-top:60px;
 text-align:center;
 padding:20px;
-background:#1a237e;
+background:#253441; /* Gris azulado oscuro (Fila 3) */
 color:white;
 
 }

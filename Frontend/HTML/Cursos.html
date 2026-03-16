@@ -2,128 +2,106 @@
 <html lang="es">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Cursos | LinguaPro</title>
-
-<link rel="stylesheet" href="/Frontend/CSS/cursos.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos | LinguaPro</title>
+    <link rel="stylesheet" href="/Frontend/CSS/cursos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header class="header">
+    <header class="header">
+        <h1>LinguaPro</h1>
+        <nav>
+            <ul>
+                <li><a href="/Frontend/HTML/Home.html">Inicio</a></li>
+                <li><a href="/Frontend/HTML/Cursos.html">Cursos</a></li>
+                <li><a href="/Frontend/HTML/Productos.html">Productos</a></li>
+                <li><a href="/Frontend/HTML/Planes.html">Planes</a></li>
+                <li><a href="/Frontend/HTML/Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<h1>LinguaPro</h1>
+    <section class="courses">
+        <h2>Explora nuestros cursos</h2>
+        <p>Aprende un nuevo idioma con nuestros cursos interactivos.</p>
 
-<nav>
+        <div class="course-container">
 
-<ul>
+            <div class="course-card">
+                <img src="img/ingles.jpg" alt="Inglés">
+                <h3>Inglés desde cero</h3>
+                <p>Aprende inglés paso a paso.</p>
+                <span class="level">Nivel A1</span>
+                <a href="/Frontend/HTML/Cursos-HTML/ingles.html">
+                    <button>Ver curso</button>
+                </a>
+            </div>
 
-<li><a href="/Frontend/HTML/Home.html">Inicio</a></li>
-<li><a href="/Frontend/HTML/Cursos.html">Cursos</a></li>
-<li><a href="/Frontend/HTML/Productos.html">Productos</a></li>
-<li><a href="/Frontend/HTML/Planes.html">Planes</a></li>
-<li><a href="/Frontend/HTML/Contacto.html">Contacto</a></li>
+            <div class="course-card">
+                <img src="img/frances.jpg" alt="Francés">
+                <h3>Francés básico</h3>
+                <p>Domina las frases esenciales.</p>
+                <span class="level">Nivel A1</span>
+                <button>Ver curso</button>
+            </div>
 
-</ul>
+            <div class="course-card">
+                <img src="img/aleman.jpg" alt="Alemán">
+                <h3>Alemán conversacional</h3>
+                <p>Mejora tu pronunciación.</p>
+                <span class="level">Nivel A2</span>
+                <button>Ver curso</button>
+            </div>
 
-</nav>
+            <div class="course-card">
+                <img src="img/japones.jpg" alt="Japonés">
+                <h3>Japonés principiantes</h3>
+                <p>Aprende hiragana y vocabulario.</p>
+                <span class="level">Nivel A1</span>
+                <button>Ver curso</button>
+            </div>
 
-</header>
+            <div class="course-card">
+                <img src="img/italiano.jpg" alt="Italiano">
+                <h3>Italiano Intermedio</h3>
+                <p>Perfecciona tu gramática y estilo.</p>
+                <span class="level">Nivel B1</span>
+                <button>Ver curso</button>
+            </div>
 
+            <div class="course-card">
+                <img src="img/portugues.jpg" alt="Portugués">
+                <h3>Portugués de Brasil</h3>
+                <p>Habla como un nativo rápidamente.</p>
+                <span class="level">Nivel A1</span>
+                <button>Ver curso</button>
+            </div>
 
-<section class="courses">
+            <div class="course-card">
+                <img src="img/ruso.jpg" alt="Ruso">
+                <h3>Ruso Intensivo</h3>
+                <p>Lectura de cirílico y diálogos básicos.</p>
+                <span class="level">Nivel A1</span>
+                <button>Ver curso</button>
+            </div>
 
-<h2>Explora nuestros cursos</h2>
+            <div class="course-card">
+                <img src="img/chino.jpg" alt="Chino">
+                <h3>Chino Mandarín</h3>
+                <p>Introducción a los caracteres y tonos.</p>
+                <span class="level">Nivel A1</span>
+                <button>Ver curso</button>
+            </div>
 
-<p>Aprende un nuevo idioma con nuestros cursos interactivos.</p>
+        </div>
+    </section>
 
-<div class="course-container">
-
-<!-- CURSO 1 -->
-
-<div class="course-card">
-
-<img src="img/ingles.jpg">
-
-<h3>Inglés desde cero</h3>
-
-<p>Aprende inglés paso a paso.</p>
-
-<span class="level">Nivel A1</span>
-
-<a href="/Frontend/HTML/Cursos-HTML/ingles.html">
-    <button>Ver curso</button>
-</a>
-
-</div>
-
-
-<!-- CURSO 2 -->
-
-<div class="course-card">
-
-<img src="img/frances.jpg">
-
-<h3>Francés básico</h3>
-
-<p>Domina las frases esenciales.</p>
-
-<span class="level">Nivel A1</span>
-
-<button>Ver curso</button>
-
-</div>
-
-
-<!-- CURSO 3 -->
-
-<div class="course-card">
-
-<img src="img/aleman.jpg">
-
-<h3>Alemán conversacional</h3>
-
-<p>Mejora tu pronunciación.</p>
-
-<span class="level">Nivel A2</span>
-
-<button>Ver curso</button>
-
-</div>
-
-
-<!-- CURSO 4 -->
-
-<div class="course-card">
-
-<img src="img/japones.jpg">
-
-<h3>Japonés para principiantes</h3>
-
-<p>Aprende hiragana y vocabulario.</p>
-
-<span class="level">Nivel A1</span>
-
-<button>Ver curso</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<footer>
-
-<p>© 2026 LinguaPro | Plataforma de aprendizaje de idiomas</p>
-
-</footer>
+    <footer>
+        <p>© 2026 LinguaPro | Plataforma de aprendizaje de idiomas</p>
+    </footer>
 
 </body>
 </html>

@@ -2,58 +2,60 @@
 <html lang="es">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Registro | LinguaPro</title>
-
-<link rel="stylesheet" href="/Frontend/CSS/registro.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | LinguaPro</title>
+    <link rel="stylesheet" href="/Frontend/CSS/registro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="register-container">
+    <div class="register-container">
 
-<div class="register-box">
+        <div class="register-box">
+            <h2>Únete a LinguaPro</h2>
+            <p style="text-align: center; color: #6c757d; font-size: 14px; margin-bottom: 20px;">
+                Crea tu cuenta y comienza a dominar un nuevo idioma hoy mismo.
+            </p>
 
-<h2>Crear Cuenta</h2>
+            <form>
+                <div class="input-group">
+                    <label>Nombre completo</label>
+                    <input type="text" placeholder="Tu nombre y apellido" required>
+                </div>
 
-<form>
+                <div class="input-group">
+                    <label>Correo electrónico</label>
+                    <input type="email" placeholder="ejemplo@email.com" required>
+                </div>
 
-<div class="input-group">
-<label>Nombre completo</label>
-<input type="text" placeholder="Tu nombre">
-</div>
+                <div class="input-group">
+                    <label>Contraseña</label>
+                    <input type="password" placeholder="Mínimo 8 caracteres" required>
+                </div>
 
-<div class="input-group">
-<label>Email</label>
-<input type="email" placeholder="ejemplo@email.com">
-</div>
+                <div class="input-group">
+                    <label>Confirmar contraseña</label>
+                    <input type="password" placeholder="Repite tu contraseña" required>
+                </div>
 
-<div class="input-group">
-<label>Contraseña</label>
-<input type="password" placeholder="********">
-</div>
+                <button type="submit" class="register-btn">
+                    Crear mi cuenta gratuita
+                </button>
 
-<div class="input-group">
-<label>Confirmar contraseña</label>
-<input type="password" placeholder="********">
-</div>
+                <p class="login-link">
+                    ¿Ya eres parte de la comunidad? <br>
+                    <a href="/Frontend/HTML/Login.html">Inicia sesión aquí</a>
+                </p>
+            </form>
+        </div>
 
-<button class="register-btn">Registrarse</button>
+    </div>
 
-<p class="login-link">
-¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>
-</p>
-
-</form>
-
-</div>
-
-</div>
+    <footer style="position: absolute; bottom: 20px; color: rgba(255,255,255,0.7); font-size: 12px;">
+        © 2026 LinguaPro | Tu futuro bilingüe comienza aquí
+    </footer>
 
 </body>
 </html>

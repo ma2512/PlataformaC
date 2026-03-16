@@ -2,131 +2,110 @@
 <html lang="es">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Productos | LinguaPro</title>
-
-<link rel="stylesheet" href="/Frontend/CSS/productos.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos | LinguaPro</title>
+    <link rel="stylesheet" href="/Frontend/CSS/productos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header class="header">
+    <header class="header">
+        <h1>LinguaPro</h1>
+        <nav>
+            <ul>
+                <li><a href="/Frontend/HTML/Home.html">Inicio</a></li>
+                <li><a href="/Frontend/HTML/Cursos.html">Cursos</a></li>
+                <li><a href="/Frontend/HTML/Productos.html">Productos</a></li>
+                <li><a href="/Frontend/HTML/Planes.html">Planes</a></li>
+                <li><a href="/Frontend/HTML/Contacto.html">Contacto</a></li>
+                <li><a href="/Frontend/HTML/Carrito.html">🛒 Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<h1>LinguaPro</h1>
+    <section class="products">
+        <h2>Libros para aprender idiomas</h2>
+        <p>Complementa tu aprendizaje con nuestros libros y guías.</p>
 
-<nav>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar libros...">
+        </div>
 
-<ul>
+        <div class="product-container">
 
-<li><a href="/Frontend/HTML/Home.html">Inicio</a></li>
-<li><a href="/Frontend/HTML/Cursos.html">Cursos</a></li>
-<li><a href="/Frontend/HTML/Productos.html">Productos</a></li>
-<li><a href="/Frontend/HTML/Planes.html">Planes</a></li>
-<li><a href="/Frontend/HTML/Contacto.html">Contacto</a></li>
-<li><a href="/Frontend/HTML/Carrito.html">🛒 Carrito</a></li>
+            <div class="product-card">
+                <img src="img/libro-ingles.jpg" alt="Libro Inglés">
+                <h3>Inglés desde cero</h3>
+                <p>Guía completa para principiantes.</p>
+                <span class="price">$200</span>
+                <button>Comprar</button>
+            </div>
 
-</ul>
+            <div class="product-card">
+                <img src="img/libro-frances.jpg" alt="Libro Francés">
+                <h3>Francés básico</h3>
+                <p>Aprende vocabulario esencial.</p>
+                <span class="price">$670</span>
+                <button>Comprar</button>
+            </div>
 
-</nav>
+            <div class="product-card">
+                <img src="img/libro-aleman.jpg" alt="Libro Alemán">
+                <h3>Alemán práctico</h3>
+                <p>Frases y gramática esencial.</p>
+                <span class="price">$900</span>
+                <button>Comprar</button>
+            </div>
 
-</header>
+            <div class="product-card">
+                <img src="img/libro-japones.jpg" alt="Libro Japonés">
+                <h3>Japonés para principiantes</h3>
+                <p>Aprende hiragana y vocabulario.</p>
+                <span class="price">$220</span>
+                <button>Comprar</button>
+            </div>
 
+            <div class="product-card">
+                <img src="img/libro-italiano.jpg" alt="Libro Italiano">
+                <h3>Diccionario Italiano</h3>
+                <p>Más de 50,000 definiciones y frases.</p>
+                <span class="price">$350</span>
+                <button>Comprar</button>
+            </div>
 
-<section class="products">
+            <div class="product-card">
+                <img src="img/libro-portugues.jpg" alt="Libro Portugués">
+                <h3>Portugués Fluido</h3>
+                <p>Guía de conversación para viajes.</p>
+                <span class="price">$280</span>
+                <button>Comprar</button>
+            </div>
 
-<h2>Libros para aprender idiomas</h2>
+            <div class="product-card">
+                <img src="img/libro-gramatica.jpg" alt="Gramática">
+                <h3>Gramática Avanzada</h3>
+                <p>Domina las estructuras complejas.</p>
+                <span class="price">$550</span>
+                <button>Comprar</button>
+            </div>
 
-<p>Complementa tu aprendizaje con nuestros libros y guías.</p>
+            <div class="product-card">
+                <img src="img/libro-chino.jpg" alt="Libro Chino">
+                <h3>Escritura China</h3>
+                <p>Cuaderno de práctica de caracteres.</p>
+                <span class="price">$310</span>
+                <button>Comprar</button>
+            </div>
 
-<div class="search-box">
-<input type="text" id="searchInput" placeholder="Buscar libros...">
-</div>
+        </div>
+    </section>
 
-<div class="product-container">
-
-<!-- PRODUCTO 1 -->
-
-<div class="product-card">
-
-<img src="img/libro-ingles.jpg" alt="Libro Inglés">
-
-<h3>Inglés desde cero</h3>
-
-<p>Guía completa para principiantes.</p>
-
-<span class="price">$200</span>
-
-<button>Comprar</button>
-
-</div>
-
-
-<!-- PRODUCTO 2 -->
-
-<div class="product-card">
-
-<img src="img/libro-frances.jpg" alt="Libro Francés">
-
-<h3>Francés básico</h3>
-
-<p>Aprende vocabulario esencial.</p>
-
-<span class="price">$670</span>
-
-<button>Comprar</button>
-
-</div>
-
-
-<!-- PRODUCTO 3 -->
-
-<div class="product-card">
-
-<img src="img/libro-aleman.jpg" alt="Libro Alemán">
-
-<h3>Alemán práctico</h3>
-
-<p>Frases y gramática esencial.</p>
-
-<span class="price">$900</span>
-
-<button>Comprar</button>
-
-</div>
-
-
-<!-- PRODUCTO 4 -->
-
-<div class="product-card">
-
-<img src="img/libro-japones.jpg" alt="Libro Japonés">
-
-<h3>Japonés para principiantes</h3>
-
-<p>Aprende hiragana y vocabulario.</p>
-
-<span class="price">$220</span>
-
-<button>Comprar</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<footer>
-
-<p>© 2026 LinguaPro | Plataforma de idiomas</p>
-
-</footer>
+    <footer>
+        <p>© 2026 LinguaPro | Plataforma de idiomas</p>
+    </footer>
 
 </body>
+
 </html>

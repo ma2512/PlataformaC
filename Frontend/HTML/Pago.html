@@ -2,97 +2,85 @@
 <html lang="es">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Pago | LinguaPro</title>
-
-<link rel="stylesheet" href="/Frontend/CSS/pago.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago | LinguaPro</title>
+    <link rel="stylesheet" href="/Frontend/CSS/pago.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header class="header">
+    <header class="header">
+        <h2>LinguaPro</h2>
+    </header>
 
-<h2>LinguaPro</h2>
+    <section class="payment-container" style="flex-direction: column; gap: 20px;">
 
-</header>
+        <div class="payment-box">
+            <h2>💳 Completar pago</h2>
+            
+            <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #7b2cbf;">
+                <p style="margin-bottom: 5px;"><strong>Resumen del pedido:</strong></p>
+                <div style="display: flex; justify-content: space-between; font-size: 14px;">
+                    <span>Plan Pro (Suscripción mensual)</span>
+                    <strong>$19.00</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 14px; margin-top: 5px; color: #28a745;">
+                    <span>Impuestos incluidos</span>
+                    <span>$0.00</span>
+                </div>
+            </div>
 
+            <form>
+                <div class="input-group">
+                    <label>Nombre del titular</label>
+                    <input type="text" placeholder="Como aparece en la tarjeta" required>
+                </div>
 
-<section class="payment-container">
+                <div class="input-group">
+                    <label>Número de tarjeta</label>
+                    <input type="text" placeholder="xxxx xxxx xxxx xxxx" maxlength="19" required>
+                </div>
 
-<div class="payment-box">
+                <div class="row">
+                    <div class="input-group">
+                        <label>Vencimiento</label>
+                        <input type="text" placeholder="MM/AA" maxlength="5" required>
+                    </div>
 
-<h2>Completar pago</h2>
+                    <div class="input-group">
+                        <label>CVV</label>
+                        <input type="password" placeholder="***" maxlength="3" required>
+                    </div>
+                </div>
 
-<p>Plan seleccionado: <strong>Pro - $19 / mes</strong></p>
+                <div class="input-group">
+                    <label>Correo electrónico para confirmación</label>
+                    <input type="email" placeholder="correo@email.com" required>
+                </div>
 
-<form>
+                <div style="text-align: center; margin-bottom: 15px; font-size: 24px; opacity: 0.6;">
+                    Visa | Mastercard | Amex | PayPal
+                </div>
 
-<div class="input-group">
+                <button class="pay-btn">Confirmar y Pagar $19.00</button>
 
-<label>Nombre del titular</label>
-<input type="text" placeholder="Nombre en la tarjeta">
+                <p class="secure">🔒 Pago procesado de forma segura con cifrado SSL de 256 bits</p>
+            </form>
 
-</div>
+            <div class="back-links" style="margin-top: 20px; text-align: center;">
+                <a href="/Frontend/HTML/Planes.html" style="text-decoration: none; color: #5a189a; font-size: 14px; font-weight: 600;">
+                    ← Volver a elegir plan
+                </a>
+            </div>
+        </div>
 
+    </section>
 
-<div class="input-group">
-
-<label>Número de tarjeta</label>
-
-<input type="text" placeholder="1234 5678 9012 3456">
-
-</div>
-
-<div class="row">
-
-<div class="input-group">
-<label>Vencimiento</label>
-<input type="text" placeholder="MM/AA">
-</div>
-
-<div class="input-group">
-<label>CVV</label>
-<input type="text" placeholder="123">
-</div>
-
-</div>
-
-
-<div class="input-group">
-
-<label>Correo electrónico</label>
-<input type="email" placeholder="correo@email.com">
-
-</div>
-
-
-<button class="pay-btn">Pagar ahora</button>
-
-<p class="secure">🔒 Pago seguro con cifrado SSL</p>
-
-</form>
-
-<div class="back-links">
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<footer>
-
-<p>Pago seguro | LinguaPro</p>
-
-</footer>
+    <footer>
+        <p>Garantía de satisfacción de 7 días | LinguaPro 2026</p>
+    </footer>
 
 </body>
 </html>

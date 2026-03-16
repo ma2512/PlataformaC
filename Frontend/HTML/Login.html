@@ -2,48 +2,51 @@
 <html lang="es">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login | LinguaPro</title>
-
-<link rel="stylesheet" href="/Frontend/CSS/login.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | LinguaPro</title>
+    <link rel="stylesheet" href="/Frontend/CSS/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="login-container">
+    <div class="login-container">
 
-<div class="login-box">
+        <div class="login-box">
+            <h2>Iniciar Sesión</h2>
+            <p style="text-align: center; color: #6c757d; font-size: 14px; margin-bottom: 20px;">
+                ¡Qué bueno verte de nuevo! Por favor, ingresa tus datos.
+            </p>
 
-<h2>Iniciar Sesión</h2>
+            <form>
+                <div class="input-group">
+                    <label>Correo electrónico</label>
+                    <input type="email" placeholder="ejemplo@email.com" required>
+                </div>
 
-<form>
+                <div class="input-group">
+                    <label>Contraseña</label>
+                    <input type="password" placeholder="********" required>
+                    <a href="#" style="font-size: 12px; color: #7b2cbf; text-align: right; margin-top: 5px; text-decoration: none;">¿Olvidaste tu contraseña?</a>
+                </div>
 
-<div class="input-group">
-<label>Email</label>
-<input type="email" placeholder="ejemplo@email.com">
-</div>
+                <button type="button" class="login-btn" onclick="window.location.href='/Frontend/HTML/Dashboard.html'">
+                    Entrar a mi cuenta
+                </button>
 
-<div class="input-group">
-<label>Contraseña</label>
-<input type="password" placeholder="********">
-</div>
+                <p class="register-link">
+                    ¿Aún no eres parte de LinguaPro? <br>
+                    <a href="/Frontend/HTML/Registro.html">Crea una cuenta gratis aquí</a>
+                </p>
+            </form>
+        </div>
 
-<a href="/Frontend/HTML/Dashboard.html">
-    <button class="login-btn">Entrar</button>
-</a>
+    </div>
 
-<p class="register-link">
-¿No tienes cuenta? <a href="/Frontend/HTML/Registro.html">Regístrate</a>
-</p>
-
-</form>
-
-</div>
-
-</div>
+    <footer style="position: absolute; bottom: 20px; color: rgba(255,255,255,0.7); font-size: 12px;">
+        © 2026 LinguaPro | Aprende sin límites
+    </footer>
 
 </body>
 </html>

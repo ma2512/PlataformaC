@@ -2,59 +2,76 @@
 <html lang="es">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Carrito | LinguaPro</title>
-
-<link rel="stylesheet" href="/Frontend/CSS/carrito.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito | LinguaPro</title>
+    <link rel="stylesheet" href="/Frontend/CSS/carrito.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header class="header">
+    <header class="header">
+        <h1>LinguaPro</h1>
+        <nav>
+            <ul>
+                <li><a href="/Frontend/HTML/Home.html">Inicio</a></li>
+                <li><a href="/Frontend/HTML/Productos.html">Productos</a></li>
+                <li><a href="/Frontend/HTML/Carrito.html">🛒 Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<h1>LinguaPro</h1>
+    <section class="cart">
+        <h2>Tu carrito de compras</h2>
 
-<nav>
+        <div id="cart-items">
+            <div class="cart-item">
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <img src="img/libro-ingles.jpg" alt="Libro Inglés">
+                    <div class="item-info">
+                        <h4>Inglés desde cero (Libro)</h4>
+                        <p>Cantidad: 1</p>
+                        <button class="btn-remove">Eliminar producto</button>
+                    </div>
+                </div>
+                <div class="item-price">
+                    <p style="font-weight: 600; color: #5a189a;">$200.00</p>
+                </div>
+            </div>
 
-<ul>
+            <div class="cart-item">
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <img src="img/libro-frances.jpg" alt="Libro Francés">
+                    <div class="item-info">
+                        <h4>Guía de Francés Básico</h4>
+                        <p>Cantidad: 1</p>
+                        <button class="btn-remove">Eliminar producto</button>
+                    </div>
+                </div>
+                <div class="item-price">
+                    <p style="font-weight: 600; color: #5a189a;">$670.00</p>
+                </div>
+            </div>
+        </div>
 
-<li><a href="/Frontend/HTML/Home.html">Inicio</a></li>
-<li><a href="/Frontend/HTML/Productos.html">Productos</a></li>
-<li><a href="/Frontend/HTML/Carrito.html">Carrito</a></li>
+        <div class="total">
+            <div class="back-link">
+                <a href="/Frontend/HTML/Productos.html">← Continuar comprando</a>
+            </div>
+            <div style="text-align: right;">
+                <p style="font-size: 14px; color: #6c757d; margin-bottom: 5px;">Subtotal: $870.00</p>
+                <h3>Total: $870.00</h3>
+                <a href="/Frontend/HTML/Pago.html">
+                    <button>Finalizar Compra</button>
+                </a>
+            </div>
+        </div>
+    </section>
 
-</ul>
-
-</nav>
-
-</header>
-
-
-<section class="cart">
-
-<h2>Tu carrito</h2>
-
-<div id="cart-items">
-
-<p>No hay productos en el carrito.</p>
-
-</div>
-
-<div class="total">
-
-<h3>Total: $0</h3>
-
-<button>Pagar</button>
-
-</div>
-
-</section>
-
+    <footer>
+        <p>© 2026 LinguaPro | Compra segura y protegida</p>
+    </footer>
 
 </body>
 </html>

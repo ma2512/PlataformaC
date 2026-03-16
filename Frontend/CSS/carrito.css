@@ -6,7 +6,10 @@ font-family:'Poppins', sans-serif;
 }
 
 body{
-background:#f5f7fb;
+background:#e9ecef; /* Gris muy claro (Fila 1) */
+min-height: 100vh;
+display: flex;
+flex-direction: column;
 }
 
 /* HEADER */
@@ -18,53 +21,147 @@ align-items:center;
 padding:20px 60px;
 background:white;
 box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
 
+.header h1 {
+color: #140842;
+font-size: 24px;
 }
 
 nav ul{
 display:flex;
 list-style:none;
 gap:20px;
-
 }
 
 nav a{
 text-decoration:none;
-color:#333;
-
+color:#253441; /* Gris azulado (Fila 3) */
+transition: 0.3s;
+font-weight: 500;
 }
 
-/* CARRITO */
+nav a:hover{
+color:#7b2cbf; /* Morado (Fila 2) */
+}
+
+/* CONTENEDOR DEL CARRITO */
 
 .cart{
 max-width:800px;
+width: 90%;
 margin:60px auto;
 background:white;
 padding:40px;
 border-radius:10px;
 box-shadow:0 5px 20px rgba(0,0,0,0.05);
-
+flex: 1; /* Para que el footer se empuje al fondo */
 }
 
 .cart h2{
-margin-bottom:20px;
-
+margin-bottom:30px;
+color:#140842; /* Morado profundo (Fila 2) */
+border-bottom: 2px solid #f4f6fb;
+padding-bottom: 10px;
 }
 
+/* ITEMS DEL CARRITO */
+
+#cart-items p {
+color: #6c757d;
+text-align: center;
+padding: 20px;
+}
+
+/* Estilos para los productos dentro del carrito */
+.cart-item {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 15px 0;
+border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+width: 70px;
+height: 90px;
+object-fit: cover;
+border-radius: 5px;
+}
+
+.item-info h4 {
+color: #253441;
+margin-bottom: 5px;
+}
+
+.item-info p {
+font-size: 14px;
+color: #6c757d;
+}
+
+.btn-remove {
+background: none;
+border: none;
+color: #e63946;
+cursor: pointer;
+font-size: 13px;
+font-weight: 600;
+margin-top: 5px;
+}
+
+.btn-remove:hover {
+text-decoration: underline;
+}
+
+/* SECCION TOTAL */
+
 .total{
-margin-top:30px;
+margin-top:40px;
 display:flex;
 justify-content:space-between;
-align-items:center;
+align-items: flex-end; /* Alinea el botón y el texto abajo */
+color:#253441; /* Gris azulado (Fila 3) */
+}
 
+.total h3 {
+font-size: 22px;
+color: #140842;
 }
 
 .total button{
-padding:10px 20px;
-background:#3f51b5;
+padding:12px 30px;
+background:#5a189a; /* Morado intenso (Fila 2) */
 color:white;
 border:none;
 border-radius:6px;
 cursor:pointer;
+font-size: 16px;
+font-weight: 600;
+transition: 0.3s;
+}
 
+.total button:hover{
+background:#3c096c; /* Morado más oscuro (Fila 2) */
+transform: scale(1.05);
+box-shadow: 0 5px 15px rgba(90, 24, 154, 0.3);
+}
+
+.total a {
+text-decoration: none;
+color: #7b2cbf;
+font-size: 14px;
+font-weight: 500;
+}
+
+.total a:hover {
+text-decoration: underline;
+}
+
+/* FOOTER */
+
+footer {
+text-align: center;
+padding: 30px;
+color: #435966;
+font-size: 14px;
 }

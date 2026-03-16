@@ -2,148 +2,123 @@
 <html lang="es">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LinguaPro | Aprende Idiomas</title>
-
-<link rel="stylesheet" href="/Frontend/CSS/home.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinguaPro | Aprende Idiomas</title>
+    <link rel="stylesheet" href="/Frontend/CSS/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header class="header">
+    <header class="header">
+        <div class="logo">
+            LinguaPro
+        </div>
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="#">Inicio</a></li>
+                <li class="submenu">
+                    <a href="#">Cursos ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="/Frontend/HTML/Cursos-HTML/ingles.html">Inglés</a></li>
+                        <li><a href="#">Francés</a></li>
+                        <li><a href="#">Alemán</a></li>
+                        <li><a href="#">Italiano</a></li>
+                        <li><a href="#">Japonés</a></li>
+                    </ul>
+                </li>
+                <li><a href="/Frontend/HTML/Productos.html">Productos</a></li>
+                <li><a href="/Frontend/HTML/Planes.html">Planes</a></li>
+                <li><a href="/Frontend/HTML/Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="login">
+            <a href="/Frontend/HTML/Login.html">
+                <button class="btn-login">Login</button></a>
+            <a href="/Frontend/HTML/Registro.html">
+                <button class="btn-register">Registro</button>
+            </a>
+        </div>
+    </header>
 
-<div class="logo">
-LinguaPro
-</div>
+    <section class="hero">
+        <h1>Aprende idiomas de forma inteligente</h1>
+        <p>Accede a cursos interactivos, profesores expertos y certificaciones internacionales.</p>
+        <a href="/Frontend/HTML/Cursos.html">
+            <button class="btn-main">Explorar cursos</button>
+        </a>
+    </section>
 
-<nav class="navbar">
+    <section class="courses">
+        <h2>Cursos populares</h2>
+        <div class="course-container">
 
-<ul class="menu">
+            <div class="course-card">
+                <h3>Inglés Profesional</h3>
+                <p>Mejora tu inglés para negocios y entrevistas.</p>
+                <span class="level">Intermedio</span>
+                <a href="/Frontend/HTML/Cursos-HTML/ingles.html">
+                    <button>Ver curso</button>
+                </a>
+            </div>
 
-<li><a href="#">Inicio</a></li>
+            <div class="course-card">
+                <h3>Francés Básico</h3>
+                <p>Aprende a comunicarte desde cero.</p>
+                <span class="level">Principiante</span>
+                <button>Ver curso</button>
+            </div>
 
-<li class="submenu">
-<a href="#">Cursos ▾</a>
+            <div class="course-card">
+                <h3>Alemán Conversacional</h3>
+                <p>Domina la pronunciación alemana.</p>
+                <span class="level">Intermedio</span>
+                <button>Ver curso</button>
+            </div>
 
-<ul class="dropdown">
+            <div class="course-card">
+                <h3>Japonés para viajeros</h3>
+                <p>Frases y vocabulario esenciales.</p>
+                <span class="level">Básico</span>
+                <button>Ver curso</button>
+            </div>
 
-<li><a href="/Frontend/HTML/Cursos-HTML/ingles.html">Inglés</a></li>
-<li><a href="#">Francés</a></li>
-<li><a href="#">Alemán</a></li>
-<li><a href="#">Italiano</a></li>
-<li><a href="#">Japonés</a></li>
+            <div class="course-card">
+                <h3>Italiano Gastronómico</h3>
+                <p>Vocabulario especializado en cocina y cultura.</p>
+                <span class="level">Básico</span>
+                <button>Ver curso</button>
+            </div>
 
-</ul>
+            <div class="course-card">
+                <h3>Portugués Fluido</h3>
+                <p>Habla como un nativo con expresiones reales.</p>
+                <span class="level">Avanzado</span>
+                <button>Ver curso</button>
+            </div>
 
-</li>
+            <div class="course-card">
+                <h3>Ruso Técnico</h3>
+                <p>Lectura y escritura en alfabeto cirílico.</p>
+                <span class="level">Principiante</span>
+                <button>Ver curso</button>
+            </div>
 
-<li><a href="/Frontend/HTML/Productos.html">Productos</a></li>
-<li><a href="/Frontend/HTML/Planes.html">Planes</a></li>
-<li><a href="/Frontend/HTML/Contacto.html">Contacto</a></li>
+            <div class="course-card">
+                <h3>Chino Mandarín</h3>
+                <p>Introducción a los caracteres y tonos chinos.</p>
+                <span class="level">Básico</span>
+                <button>Ver curso</button>
+            </div>
 
-</ul>
+        </div>
+    </section>
 
-</nav>
-
-<div class="login">
-
-<a href="/Frontend/HTML/Login.html">
-    <button class="btn-login">Login</button></a>
-<a href="/Frontend/HTML/Registro.html">
-    <button class="btn-register">Registro</button>
-</a>
-
-</div>
-
-</header>
-
-
-<section class="hero">
-
-<h1>Aprende idiomas de forma inteligente</h1>
-
-<p>Accede a cursos interactivos, profesores expertos y certificaciones internacionales.</p>
-
-<a href="/Frontend/HTML/Cursos.html">
-    <button class="btn-main">Explorar cursos</button>
-</a>
-
-</section>
-
-
-<section class="courses">
-
-<h2>Cursos populares</h2>
-
-<div class="course-container">
-
-<div class="course-card">
-
-<h3>Inglés Profesional</h3>
-
-<p>Mejora tu inglés para negocios y entrevistas.</p>
-
-<span class="level">Intermedio</span>
-
-<a href="/Frontend/HTML/Cursos-HTML/ingles.html">
-    <button>Ver curso</button>
-</a>
-
-</div>
-
-
-<div class="course-card">
-
-<h3>Francés Básico</h3>
-
-<p>Aprende a comunicarte desde cero.</p>
-
-<span class="level">Principiante</span>
-
-<button>Ver curso</button>
-
-</div>
-
-
-<div class="course-card">
-
-<h3>Alemán Conversacional</h3>
-
-<p>Domina la pronunciación alemana.</p>
-
-<span class="level">Intermedio</span>
-
-<button>Ver curso</button>
-
-</div>
-
-
-<div class="course-card">
-
-<h3>Japonés para viajeros</h3>
-
-<p>Frases y vocabulario esenciales.</p>
-
-<span class="level">Básico</span>
-
-<button>Ver curso</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<footer>
-
-<p>© 2026 LinguaPro | Plataforma de aprendizaje de idiomas</p>
-
-</footer>
-
+    <footer>
+        <p>© 2026 LinguaPro | Plataforma de aprendizaje de idiomas</p>
+    </footer>
 
 </body>
+
 </html>

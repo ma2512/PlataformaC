@@ -2,136 +2,114 @@
 <html lang="es">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Dashboard | LinguaPro</title>
-
-<link rel="stylesheet" href="/Frontend/CSS/dashboard.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | LinguaPro</title>
+    <link rel="stylesheet" href="/Frontend/CSS/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="dashboard">
+    <div class="dashboard">
 
-<!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2 class="logo">LinguaPro</h2>
+            <ul>
+                <li>🏠 Inicio</li>
+                <li>📚 Mis Cursos</li>
+                <li>📈 Progreso</li>
+                <li>🎓 Certificados</li>
+                <li>⚙️ Configuración</li>
+                <li style="margin-top: 50px; opacity: 0.7;">🚪 <a href="/Frontend/HTML/Home.html" style="color: white; text-decoration: none;">Cerrar Sesión</a></li>
+            </ul>
+        </aside>
 
-<aside class="sidebar">
+        <main class="main-content">
 
-<h2 class="logo">LinguaPro</h2>
+            <header class="topbar">
+                <div>
+                    <h1>¡Hola de nuevo, Estudiante! 👋</h1>
+                    <p style="font-size: 14px; opacity: 0.8;">Es un buen día para aprender algo nuevo.</p>
+                </div>
+                <div class="profile">
+                    <strong>👤 Juan Pérez</strong>
+                </div>
+            </header>
 
-<ul>
+            <section class="stats">
+                <div class="stat-card">
+                    <h3>📚 Cursos activos</h3>
+                    <p>3</p>
+                </div>
 
-<li>Inicio</li>
-<li>Mis Cursos</li>
-<li>Progreso</li>
-<li>Certificados</li>
-<li>Configuración</li>
+                <div class="stat-card">
+                    <h3>✅ Lecciones</h3>
+                    <p>24</p>
+                </div>
 
-</ul>
+                <div class="stat-card">
+                    <h3>⏳ Tiempo total</h3>
+                    <p>12h 45m</p>
+                </div>
 
-</aside>
+                <div class="stat-card" style="border-left: 4px solid #7b2cbf;">
+                    <h3>🔥 Racha</h3>
+                    <p>5 Días</p>
+                </div>
+            </section>
 
+            <section class="my-courses">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2>Continuar aprendiendo</h2>
+                    <a href="/Frontend/HTML/Cursos.html" style="font-size: 14px; color: #7b2cbf; text-decoration: none; font-weight: 600;">Ver catálogo completo →</a>
+                </div>
 
-<!-- CONTENIDO PRINCIPAL -->
+                <div class="course-container">
 
-<main class="main-content">
+                    <div class="course-card">
+                        <h3>🇬🇧 Inglés Profesional</h3>
+                        <p>Módulo 4: Presentaciones</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width:60%"></div>
+                        </div>
+                        <p style="font-size: 12px; margin-bottom: 10px;">60% completado</p>
+                        <button>Continuar lección</button>
+                    </div>
 
-<header class="topbar">
+                    <div class="course-card">
+                        <h3>🇫🇷 Francés Básico</h3>
+                        <p>Módulo 2: Gastronomía</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width:40%"></div>
+                        </div>
+                        <p style="font-size: 12px; margin-bottom: 10px;">40% completado</p>
+                        <button>Continuar lección</button>
+                    </div>
 
-<h1>Bienvenido, Estudiante</h1>
+                    <div class="course-card">
+                        <h3>🇩🇪 Alemán Conversacional</h3>
+                        <p>Módulo 1: Saludos</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width:25%"></div>
+                        </div>
+                        <p style="font-size: 12px; margin-bottom: 10px;">25% completado</p>
+                        <button>Continuar lección</button>
+                    </div>
 
-<div class="profile">
-Mi perfil
-</div>
+                </div>
+            </section>
 
-</header>
+            <section style="margin-top: 40px; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                <h3 style="margin-bottom: 10px;">📢 Próximas Clases en Vivo</h3>
+                <p style="font-size: 14px; color: #555;">
+                    • <strong>Taller de Pronunciación:</strong> Mañana a las 10:00 AM <br>
+                    • <strong>Club de Conversación:</strong> Jueves a las 5:00 PM
+                </p>
+            </section>
 
-
-<!-- ESTADISTICAS -->
-
-<section class="stats">
-
-<div class="stat-card">
-<h3>Cursos activos</h3>
-<p>3</p>
-</div>
-
-<div class="stat-card">
-<h3>Lecciones completadas</h3>
-<p>24</p>
-</div>
-
-<div class="stat-card">
-<h3>Horas de estudio</h3>
-<p>12h</p>
-</div>
-
-</section>
-
-
-<!-- CURSOS -->
-
-<section class="my-courses">
-
-<h2>Mis Cursos</h2>
-
-<div class="course-container">
-
-<div class="course-card">
-
-<h3>Inglés Profesional</h3>
-
-<p>Progreso</p>
-
-<div class="progress-bar">
-<div class="progress" style="width:60%"></div>
-</div>
-
-<button>Continuar</button>
-
-</div>
-
-
-<div class="course-card">
-
-<h3>Francés Básico</h3>
-
-<p>Progreso</p>
-
-<div class="progress-bar">
-<div class="progress" style="width:40%"></div>
-</div>
-
-<button>Continuar</button>
-
-</div>
-
-
-<div class="course-card">
-
-<h3>Alemán Conversacional</h3>
-
-<p>Progreso</p>
-
-<div class="progress-bar">
-<div class="progress" style="width:25%"></div>
-</div>
-
-<button>Continuar</button>
-
-</div>
-
-</div>
-
-</section>
-
-</main>
-
-</div>
+        </main>
+    </div>
 
 </body>
 </html>

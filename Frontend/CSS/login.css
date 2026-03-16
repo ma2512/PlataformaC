@@ -10,8 +10,8 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:linear-gradient(135deg,#3f51b5,#5c6bc0);
-
+/* Gradiente usando los morados intensos de la fila central (#140842 y #5a189a) */
+background:linear-gradient(135deg, #140842, #5a189a);
 }
 
 /* CONTENEDOR */
@@ -23,13 +23,12 @@ border-radius:10px;
 width:320px;
 box-shadow:0 10px 30px rgba(0,0,0,0.2);
 text-align:center;
-
 }
 
 .login-box h2{
 margin-bottom:20px;
-color:#333;
-
+/* Azul pizarra oscuro de la fila inferior */
+color:#253441;
 }
 
 /* INPUTS */
@@ -37,12 +36,12 @@ color:#333;
 .input-group{
 margin-bottom:15px;
 text-align:left;
-
 }
 
 .input-group label{
 font-size:14px;
-
+/* Gris azulado de la fila inferior */
+color:#435966;
 }
 
 .input-group input{
@@ -50,8 +49,16 @@ width:100%;
 padding:10px;
 margin-top:5px;
 border-radius:5px;
-border:1px solid #ccc;
+/* Gris claro de la fila superior */
+border:1px solid #ced4da;
+outline: none;
+transition: 0.3s;
+}
 
+.input-group input:focus{
+/* Morado vibrante al hacer foco */
+border-color:#7b2cbf;
+box-shadow: 0 0 5px rgba(123, 44, 191, 0.2);
 }
 
 /* BOTON */
@@ -60,18 +67,19 @@ border:1px solid #ccc;
 width:100%;
 padding:10px;
 border:none;
-background:#3f51b5;
+/* Morado vibrante de la fila central */
+background:#7b2cbf;
 color:white;
 font-size:16px;
 border-radius:5px;
 cursor:pointer;
 margin-top:10px;
-
+transition: 0.3s;
 }
 
 .login-btn:hover{
-background:#303f9f;
-
+/* Morado más oscuro de la fila central */
+background:#5a189a;
 }
 
 /* LINK REGISTRO */
@@ -79,12 +87,18 @@ background:#303f9f;
 .register-link{
 margin-top:15px;
 font-size:14px;
-
+color:#6c757d;
 }
 
 .register-link a{
-color:#3f51b5;
+/* Morado para el enlace de registro */
+color:#9d4edd;
 text-decoration:none;
 font-weight:600;
+transition: 0.3s;
+}
 
+.register-link a:hover{
+color:#7b2cbf;
+text-decoration: underline;
 }

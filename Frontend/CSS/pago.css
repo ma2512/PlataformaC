@@ -6,147 +6,128 @@ font-family:'Poppins', sans-serif;
 }
 
 body{
-
-background:#f4f6fb;
+background:#e9ecef;
 display:flex;
 flex-direction:column;
 align-items:center;
 min-height:100vh;
-
 }
 
 /* HEADER */
-
 .header{
 width:100%;
 padding:20px;
 text-align:center;
-background:#3f51b5;
+background:#140842;
 color:white;
 font-size:20px;
 font-weight:600;
-
 }
 
 /* CONTENEDOR PRINCIPAL */
-
 .payment-container{
 display:flex;
 justify-content:center;
 align-items:center;
-margin-top:60px;
+margin-top:40px; /* Reducido un poco para que no quede tan abajo */
 width:100%;
-
+padding: 20px; /* Para que en celulares no pegue a los bordes */
 }
 
-/* CAJA DE PAGO */
-
+/* CAJA DE PAGO (MODAL) */
 .payment-box{
 background:white;
 padding:40px;
 border-radius:12px;
-width:360px;
+/* ANCHO ESTIRADO: De 360px a 500px para mayor amplitud */
+width: 100%;
+max-width: 500px; 
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
-
 }
 
 .payment-box h2{
-margin-bottom:10px;
-font-size:24px;
-
+margin-bottom:15px;
+font-size:26px; /* Un poco más grande para el nuevo ancho */
+color:#253441;
+text-align: center; /* Centrado para que se vea balanceado */
 }
 
 .payment-box p{
 margin-bottom:25px;
-color:#555;
-
+color:#6c757d;
 }
 
 /* INPUTS */
-
 .input-group{
 margin-bottom:18px;
 display:flex;
 flex-direction:column;
-
 }
 
 .input-group label{
 font-size:14px;
 margin-bottom:6px;
-color:#333;
-
+color:#2e4052;
+font-weight: 500;
 }
 
 .input-group input{
 width:100%;
-padding:12px;
-border-radius:6px;
-border:1px solid #ccc;
+padding:14px; /* Un poco más de padding para que los campos se vean más modernos */
+border-radius:8px;
+border:1px solid #ced4da;
 font-size:14px;
 transition:0.2s;
-
 }
 
 .input-group input:focus{
 outline:none;
-border-color:#3f51b5;
-
+border-color:#7b2cbf;
+box-shadow: 0 0 8px rgba(123, 44, 191, 0.2);
 }
 
 /* FILA PARA FECHA Y CVV */
-
 .row{
 display:flex;
-gap:12px;
-
+gap:20px; /* Más espacio entre los campos pequeños */
 }
 
 .row .input-group{
 flex:1;
-
 }
 
 /* BOTON */
-
 .pay-btn{
-
 width:100%;
-padding:12px;
-background:#3f51b5;
+padding:15px;
+background:#5a189a;
 color:white;
 border:none;
-border-radius:6px;
+border-radius:8px;
 cursor:pointer;
-font-size:15px;
-font-weight:500;
-margin-top:10px;
+font-size:16px;
+font-weight:600;
+margin-top:15px;
 transition:0.3s;
-
 }
 
 .pay-btn:hover{
-background:#2f3fa3;
-
+background:#3c096c;
+transform: translateY(-1px); /* Efecto sutil de levante */
 }
 
 /* Mejoras*/
-
 .secure{
 text-align:center;
 font-size:13px;
-color:#777;
-margin-top:10px;
+color:#58727a;
+margin-top:15px;
 }
 
-
-
 /* FOOTER */
-
 footer{
-margin-top:40px;
-padding:20px;
-color:#555;
+margin-top:auto; /* Empuja el footer siempre al fondo */
+padding:30px;
+color:#495057;
 font-size:14px;
-
 }
