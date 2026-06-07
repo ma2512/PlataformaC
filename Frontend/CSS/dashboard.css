@@ -136,6 +136,15 @@ body {
     cursor: pointer;
 }
 
+.sidebar li a svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    transition: stroke 0.2s ease;
+}
+
 .sidebar li a:hover {
     background-color: var(--bg-main);
     color: var(--primary-color);
@@ -146,6 +155,10 @@ body {
     color: white !important;
     box-shadow: 0 4px 12px rgba(123, 44, 191, 0.2);
     font-weight: 600;
+}
+
+.sidebar li.active a svg {
+    stroke: white;
 }
 
 /* Smart logout button alignment */
