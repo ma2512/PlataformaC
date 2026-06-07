@@ -4,15 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pago | LinguaPro</title>
-    <link rel="stylesheet" href="/Frontend/CSS/pago.css">
+    <title>Pago | BridgeUp</title>
+    <link rel="stylesheet" href="../CSS/pago.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .payment-methods-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        .method-card {
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 15px 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #f8fafc;
+        }
+        .method-card:hover {
+            border-color: #c77dff;
+            background: #fcf8ff;
+            transform: translateY(-2px);
+        }
+        .method-card.active {
+            border-color: #7b2cbf;
+            background: #f3e8ff;
+            box-shadow: 0 0 10px rgba(123, 44, 191, 0.15);
+        }
+        .method-icon {
+            font-size: 26px;
+            margin-bottom: 5px;
+        }
+        .method-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #140842;
+        }
+        .info-box {
+            display: none;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 
 <body>
 
     <header class="header">
-        <h2>LinguaPro</h2>
+        <h2>BridgeUp</h2>
     </header>
 
     <section class="payment-container" style="flex-direction: column; gap: 20px;">
@@ -23,8 +76,8 @@
             <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #7b2cbf;">
                 <p style="margin-bottom: 5px;"><strong>Resumen del pedido:</strong></p>
                 <div style="display: flex; justify-content: space-between; font-size: 14px;">
-                    <span>Plan Pro (Suscripción mensual)</span>
-                    <strong>$19.00</strong>
+                    <span id="checkout-desc">Plan Pro (Suscripción mensual)</span>
+                    <strong id="checkout-price">$19.00</strong>
                 </div>
                 <div style="display: flex; justify-content: space-between; font-size: 14px; margin-top: 5px; color: #28a745;">
                     <span>Impuestos incluidos</span>
@@ -32,45 +85,77 @@
                 </div>
             </div>
 
-            <form>
+            <form id="paymentForm">
+                <!-- Selector de Método de Pago -->
                 <div class="input-group">
-                    <label>Nombre del titular</label>
-                    <input type="text" placeholder="Como aparece en la tarjeta" required>
+                    <label>Selecciona tu método de pago</label>
+                    <div class="payment-methods-grid">
+                        <div class="method-card active" data-method="tarjeta">
+                            <span class="method-icon">💳</span>
+                            <span class="method-name">Tarjeta</span>
+                        </div>
+                        <div class="method-card" data-method="paypal">
+                            <span class="method-icon">🅿️</span>
+                            <span class="method-name">PayPal</span>
+                        </div>
+                        <div class="method-card" data-method="oxxo">
+                            <span class="method-icon">💵</span>
+                            <span class="method-name">OXXO Pay</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="input-group">
-                    <label>Número de tarjeta</label>
-                    <input type="text" placeholder="xxxx xxxx xxxx xxxx" maxlength="19" required>
+                    <label id="label-titular">Nombre del titular</label>
+                    <input type="text" id="input-titular" placeholder="Como aparece en la tarjeta" required>
                 </div>
 
-                <div class="row">
+                <!-- Detalles de Tarjeta -->
+                <div id="card-details-group">
                     <div class="input-group">
-                        <label>Vencimiento</label>
-                        <input type="text" placeholder="MM/AA" maxlength="5" required>
+                        <label>Número de tarjeta</label>
+                        <input type="text" id="input-cardnumber" placeholder="xxxx xxxx xxxx xxxx" maxlength="19" required>
                     </div>
 
-                    <div class="input-group">
-                        <label>CVV</label>
-                        <input type="password" placeholder="***" maxlength="3" required>
+                    <div class="row">
+                        <div class="input-group">
+                            <label>Vencimiento</label>
+                            <input type="text" id="input-expiry" placeholder="MM/AA" maxlength="5" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>CVV</label>
+                            <input type="password" id="input-cvv" placeholder="***" maxlength="3" required>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Info Box para PayPal -->
+                <div id="paypal-info" class="info-box" style="background: #e0f2fe; border-left: 4px solid #0284c7; color: #0369a1;">
+                    🔒 Serás redirigido a la ventana segura de <strong>PayPal</strong> para autorizar tu pago una vez que des clic en el botón inferior.
+                </div>
+
+                <!-- Info Box para OXXO -->
+                <div id="oxxo-info" class="info-box" style="background: #fef3c7; border-left: 4px solid #d97706; color: #b45309;">
+                    📄 Al confirmar, se generará una <strong>ficha digital OXXO Pay</strong>. Podrás pagarla en efectivo en cualquier OXXO del país dentro de las próximas 48 horas.
                 </div>
 
                 <div class="input-group">
                     <label>Correo electrónico para confirmación</label>
-                    <input type="email" placeholder="correo@email.com" required>
+                    <input type="email" id="input-email" placeholder="correo@email.com" required>
                 </div>
 
                 <div style="text-align: center; margin-bottom: 15px; font-size: 24px; opacity: 0.6;">
                     Visa | Mastercard | Amex | PayPal
                 </div>
 
-                <button class="pay-btn">Confirmar y Pagar $19.00</button>
+                <button type="submit" class="pay-btn" id="btn-pay">Confirmar y Pagar</button>
 
                 <p class="secure">🔒 Pago procesado de forma segura con cifrado SSL de 256 bits</p>
             </form>
 
             <div class="back-links" style="margin-top: 20px; text-align: center;">
-                <a href="/Frontend/HTML/Planes.html" style="text-decoration: none; color: #5a189a; font-size: 14px; font-weight: 600;">
+                <a href="../HTML/Planes.html" style="text-decoration: none; color: #5a189a; font-size: 14px; font-weight: 600;">
                     ← Volver a elegir plan
                 </a>
             </div>
@@ -79,8 +164,170 @@
     </section>
 
     <footer>
-        <p>Garantía de satisfacción de 7 días | LinguaPro 2026</p>
+        <p>Garantía de satisfacción de 7 días | BridgeUp 2026</p>
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const descEl = document.getElementById("checkout-desc");
+            const priceEl = document.getElementById("checkout-price");
+            const btnPay = document.getElementById("btn-pay");
+            const form = document.getElementById("paymentForm");
+
+            // Elementos del selector y campos dinámicos
+            const methodCards = document.querySelectorAll(".method-card");
+            const labelTitular = document.getElementById("label-titular");
+            const inputTitular = document.getElementById("input-titular");
+            const cardDetailsGroup = document.getElementById("card-details-group");
+            const cardInputs = cardDetailsGroup.querySelectorAll("input");
+            const paypalInfo = document.getElementById("paypal-info");
+            const oxxoInfo = document.getElementById("oxxo-info");
+
+            let selectedMethod = "tarjeta";
+
+            // Manejo de la selección del método de pago
+            methodCards.forEach(card => {
+                card.addEventListener("click", () => {
+                    methodCards.forEach(c => c.classList.remove("active"));
+                    card.classList.add("active");
+                    selectedMethod = card.getAttribute("data-method");
+
+                    const total = localStorage.getItem("checkoutTotal") || "19.00";
+
+                    if (selectedMethod === "tarjeta") {
+                        cardDetailsGroup.style.display = "block";
+                        cardInputs.forEach(input => input.setAttribute("required", ""));
+                        labelTitular.textContent = "Nombre del titular";
+                        inputTitular.placeholder = "Como aparece en la tarjeta";
+                        paypalInfo.style.display = "none";
+                        oxxoInfo.style.display = "none";
+                        btnPay.textContent = `Confirmar y Pagar $${total}`;
+                    } else if (selectedMethod === "paypal") {
+                        cardDetailsGroup.style.display = "none";
+                        cardInputs.forEach(input => input.removeAttribute("required"));
+                        labelTitular.textContent = "Nombre completo";
+                        inputTitular.placeholder = "Tu nombre y apellido";
+                        paypalInfo.style.display = "block";
+                        oxxoInfo.style.display = "none";
+                        btnPay.textContent = `Pagar con PayPal $${total}`;
+                    } else if (selectedMethod === "oxxo") {
+                        cardDetailsGroup.style.display = "none";
+                        cardInputs.forEach(input => input.removeAttribute("required"));
+                        labelTitular.textContent = "Nombre completo";
+                        inputTitular.placeholder = "Tu nombre y apellido";
+                        paypalInfo.style.display = "none";
+                        oxxoInfo.style.display = "block";
+                        btnPay.textContent = `Generar Ficha OXXO $${total}`;
+                    }
+                });
+            });
+
+            // Leer datos de localStorage
+            const checkoutTotal = localStorage.getItem("checkoutTotal");
+            const checkoutDesc = localStorage.getItem("checkoutDescription");
+
+            if (checkoutTotal && checkoutDesc) {
+                descEl.textContent = checkoutDesc;
+                priceEl.textContent = `$${checkoutTotal}`;
+                btnPay.textContent = `Confirmar y Pagar $${checkoutTotal}`;
+            }
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                const titular = inputTitular.value;
+                const email = document.getElementById("input-email").value;
+                const total = localStorage.getItem("checkoutTotal") || "19.00";
+                const desc = localStorage.getItem("checkoutDescription") || "Plan Pro (Suscripción mensual)";
+
+                // Enviar datos al servidor
+                fetch("../../Backend/procesar_pago.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    body: new URLSearchParams({
+                        nombre_cliente: titular,
+                        email_cliente: email,
+                        concepto: desc,
+                        monto: total,
+                        metodo_pago: selectedMethod
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        // Notificación de éxito
+                        let successMsg = "¡Pago procesado con éxito! Registro guardado en la base de datos.";
+                        if (selectedMethod === 'paypal') {
+                            successMsg = "¡Redirigiendo a PayPal para finalizar su transacción!";
+                        } else if (selectedMethod === 'oxxo') {
+                            successMsg = "¡Ficha de OXXO Pay generada! Enviada a su correo.";
+                        }
+                        showSuccessNotification(successMsg);
+
+                        // Limpiar carrito y checkout
+                        localStorage.removeItem("cart");
+                        localStorage.removeItem("checkoutTotal");
+                        localStorage.removeItem("checkoutDescription");
+
+                        // Redirigir después de 2.5 segundos
+                        setTimeout(() => {
+                            window.location.href = "Dashboard.php";
+                        }, 2500);
+                    } else {
+                        alert("Error al procesar el pago: " + data.message);
+                    }
+                })
+                .catch(err => {
+                    console.error("Error:", err);
+                    alert("Ocurrió un error al procesar el pago en el servidor.");
+                });
+            });
+
+            function showSuccessNotification(msg) {
+                const notif = document.createElement('div');
+                notif.textContent = msg;
+                notif.style.position = 'fixed';
+                notif.style.top = '50%';
+                notif.style.left = '50%';
+                notif.style.transform = 'translate(-50%, -50%)';
+                notif.style.background = '#28a745';
+                notif.style.color = 'white';
+                notif.style.padding = '20px 40px';
+                notif.style.borderRadius = '12px';
+                notif.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+                notif.style.zIndex = '9999';
+                notif.style.fontFamily = 'Poppins, sans-serif';
+                notif.style.fontSize = '18px';
+                notif.style.fontWeight = 'bold';
+                notif.style.textAlign = 'center';
+                notif.style.animation = 'scaleUp 0.3s ease';
+                document.body.appendChild(notif);
+
+                // Agregar overlay de fondo oscuro
+                const overlay = document.createElement('div');
+                overlay.style.position = 'fixed';
+                overlay.style.top = '0';
+                overlay.style.left = '0';
+                overlay.style.width = '100%';
+                overlay.style.height = '100%';
+                overlay.style.background = 'rgba(0,0,0,0.5)';
+                overlay.style.backdropFilter = 'blur(5px)';
+                overlay.style.zIndex = '9998';
+                document.body.appendChild(overlay);
+            }
+
+            // Animación
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes scaleUp {
+                    from { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+                    to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
 </body>
 </html>

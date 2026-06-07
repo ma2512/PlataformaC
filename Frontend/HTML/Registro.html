@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro | LinguaPro</title>
-    <link rel="stylesheet" href="/Frontend/CSS/registro.css">
+    <title>Registro |BridgeUp</title>
+    <link rel="stylesheet" href="../CSS/registro.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
@@ -14,30 +14,45 @@
     <div class="register-container">
 
         <div class="register-box">
-            <h2>Únete a LinguaPro</h2>
+            <h2>Únete a BridgeUp</h2>
             <p style="text-align: center; color: #6c757d; font-size: 14px; margin-bottom: 20px;">
                 Crea tu cuenta y comienza a dominar un nuevo idioma hoy mismo.
             </p>
 
-            <form>
+            <div id="error-message" style="display: none; background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; padding: 10px; border-radius: 8px; font-size: 14px; margin-bottom: 15px; text-align: center;"></div>
+            <script>
+                const urlParams = new URLSearchParams(window.location.search);
+                const error = urlParams.get('error');
+                if (error) {
+                    const errorDiv = document.getElementById('error-message');
+                    errorDiv.style.display = 'block';
+                    if (error === 'campos_vacios') errorDiv.textContent = 'Por favor, completa todos los campos.';
+                    else if (error === 'passwords_no_coinciden') errorDiv.textContent = 'Las contraseñas no coinciden.';
+                    else if (error === 'email_invalido') errorDiv.textContent = 'El correo electrónico no es válido.';
+                    else if (error === 'email_duplicado') errorDiv.textContent = 'El correo ya está registrado.';
+                    else if (error === 'error_registro') errorDiv.textContent = 'Ocurrió un error al registrar el usuario.';
+                }
+            </script>
+
+            <form action="../../Backend/registro.php" method="POST">
                 <div class="input-group">
                     <label>Nombre completo</label>
-                    <input type="text" placeholder="Tu nombre y apellido" required>
+                    <input type="text" name="nombre" placeholder="Tu nombre y apellido" required>
                 </div>
 
                 <div class="input-group">
                     <label>Correo electrónico</label>
-                    <input type="email" placeholder="ejemplo@email.com" required>
+                    <input type="email" name="email" placeholder="ejemplo@email.com" required>
                 </div>
 
                 <div class="input-group">
                     <label>Contraseña</label>
-                    <input type="password" placeholder="Mínimo 8 caracteres" required>
+                    <input type="password" name="password" placeholder="Mínimo 8 caracteres" required>
                 </div>
 
                 <div class="input-group">
                     <label>Confirmar contraseña</label>
-                    <input type="password" placeholder="Repite tu contraseña" required>
+                    <input type="password" name="confirm_password" placeholder="Repite tu contraseña" required>
                 </div>
 
                 <button type="submit" class="register-btn">
@@ -46,16 +61,16 @@
 
                 <p class="login-link">
                     ¿Ya eres parte de la comunidad? <br>
-                    <a href="/Frontend/HTML/Login.html">Inicia sesión aquí</a>
+                    <a href="../HTML/Login.html">Inicia sesión aquí</a>
                 </p>
             </form>
         </div>
 
-    </div>
+        <footer style="margin-top: 30px; color: rgba(255,255,255,0.7); font-size: 12px; text-align: center;">
+            © 2026 BridgeUp  | Tu futuro bilingüe comienza aquí
+        </footer>
 
-    <footer style="position: absolute; bottom: 20px; color: rgba(255,255,255,0.7); font-size: 12px;">
-        © 2026 LinguaPro | Tu futuro bilingüe comienza aquí
-    </footer>
+    </div>
 
 </body>
 </html>

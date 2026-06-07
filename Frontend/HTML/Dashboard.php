@@ -1,12 +1,38 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: Login.html");
+    exit();
+}
+if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true) {
+    header("Location: ../../Backend/admin_crud.php");
+    exit();
+}
+$user_name = htmlspecialchars($_SESSION['user_name']);
+?>
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | LinguaPro</title>
-    <link rel="stylesheet" href="/Frontend/CSS/dashboard.css">
+    <title>Dashboard | BridgeUp</title>
+    <link rel="stylesheet" href="../CSS/dashboard.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .sidebar li.active {
+            color: white;
+            font-weight: 600;
+        }
+        .sidebar a {
+            color: #c77dff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .sidebar a:hover, .sidebar li.active a {
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,14 +40,14 @@
     <div class="dashboard">
 
         <aside class="sidebar">
-            <h2 class="logo">LinguaPro</h2>
+            <h2 class="logo">BridgeUp</h2>
             <ul>
-                <li>🏠 Inicio</li>
-                <li>📚 Mis Cursos</li>
-                <li>📈 Progreso</li>
-                <li>🎓 Certificados</li>
-                <li>⚙️ Configuración</li>
-                <li style="margin-top: 50px; opacity: 0.7;">🚪 <a href="/Frontend/HTML/Home.html" style="color: white; text-decoration: none;">Cerrar Sesión</a></li>
+                <li class="active">🏠 <a href="Dashboard.php">Inicio</a></li>
+                <li>📚 <a href="mis_cursos.php">Mis Cursos</a></li>
+                <li>📈 <a href="progreso.php">Progreso</a></li>
+                <li>🎓 <a href="certificados.php">Certificados</a></li>
+                <li>⚙️ <a href="configuracion.php">Configuración</a></li>
+                <li style="margin-top: 50px; opacity: 0.7;"> <a href="../../Backend/logout.php">Cerrar Sesión</a></li>
             </ul>
         </aside>
 
@@ -29,32 +55,32 @@
 
             <header class="topbar">
                 <div>
-                    <h1>¡Hola de nuevo, Estudiante! 👋</h1>
+                    <h1>¡Hola de nuevo, <?php echo $user_name; ?>! 👋</h1>
                     <p style="font-size: 14px; opacity: 0.8;">Es un buen día para aprender algo nuevo.</p>
                 </div>
                 <div class="profile">
-                    <strong>👤 Juan Pérez</strong>
+                    <strong>👤 <?php echo $user_name; ?></strong>
                 </div>
             </header>
 
             <section class="stats">
                 <div class="stat-card">
-                    <h3>📚 Cursos activos</h3>
+                    <h3> Cursos activos</h3>
                     <p>3</p>
                 </div>
 
                 <div class="stat-card">
-                    <h3>✅ Lecciones</h3>
+                    <h3> Lecciones</h3>
                     <p>24</p>
                 </div>
 
                 <div class="stat-card">
-                    <h3>⏳ Tiempo total</h3>
+                    <h3> Tiempo total</h3>
                     <p>12h 45m</p>
                 </div>
 
                 <div class="stat-card" style="border-left: 4px solid #7b2cbf;">
-                    <h3>🔥 Racha</h3>
+                    <h3> Racha</h3>
                     <p>5 Días</p>
                 </div>
             </section>
@@ -62,7 +88,7 @@
             <section class="my-courses">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                     <h2>Continuar aprendiendo</h2>
-                    <a href="/Frontend/HTML/Cursos.html" style="font-size: 14px; color: #7b2cbf; text-decoration: none; font-weight: 600;">Ver catálogo completo →</a>
+                    <a href="../HTML/Cursos.html" style="font-size: 14px; color: #7b2cbf; text-decoration: none; font-weight: 600;">Ver catálogo completo →</a>
                 </div>
 
                 <div class="course-container">
@@ -74,7 +100,7 @@
                             <div class="progress" style="width:60%"></div>
                         </div>
                         <p style="font-size: 12px; margin-bottom: 10px;">60% completado</p>
-                        <button>Continuar lección</button>
+                        <button style="background: #6c757d; cursor: not-allowed;" disabled>Continuar lección</button>
                     </div>
 
                     <div class="course-card">
@@ -84,7 +110,7 @@
                             <div class="progress" style="width:40%"></div>
                         </div>
                         <p style="font-size: 12px; margin-bottom: 10px;">40% completado</p>
-                        <button>Continuar lección</button>
+                        <button style="background: #6c757d; cursor: not-allowed;" disabled>Continuar lección</button>
                     </div>
 
                     <div class="course-card">
@@ -94,7 +120,7 @@
                             <div class="progress" style="width:25%"></div>
                         </div>
                         <p style="font-size: 12px; margin-bottom: 10px;">25% completado</p>
-                        <button>Continuar lección</button>
+                        <button style="background: #6c757d; cursor: not-allowed;" disabled>Continuar lección</button>
                     </div>
 
                 </div>

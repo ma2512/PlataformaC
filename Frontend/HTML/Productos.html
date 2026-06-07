@@ -4,26 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos | LinguaPro</title>
-    <link rel="stylesheet" href="/Frontend/CSS/productos.css">
+    <title>Productos | BridgeUp</title>
+    <link rel="stylesheet" href="../CSS/productos.css">
+    <link rel="stylesheet" href="../CSS/global-navbar.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <header class="header">
-        <h1>LinguaPro</h1>
-        <nav>
-            <ul>
-                <li><a href="/Frontend/HTML/Home.html">Inicio</a></li>
-                <li><a href="/Frontend/HTML/Cursos.html">Cursos</a></li>
-                <li><a href="/Frontend/HTML/Productos.html">Productos</a></li>
-                <li><a href="/Frontend/HTML/Planes.html">Planes</a></li>
-                <li><a href="/Frontend/HTML/Contacto.html">Contacto</a></li>
-                <li><a href="/Frontend/HTML/Carrito.html">🛒 Carrito</a></li>
+    <div class="header-content">
+        <a href="../HTML/Home.html" class="logo">BridgeUp</a>
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="../HTML/Home.html">Inicio</a></li>
+                <li class="submenu">
+                    <a href="#">Cursos ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="../HTML/Cursos-HTML/ingles.html">Inglés</a></li>
+                        <li><a href="../HTML/Cursos-HTML/frances.html">Francés</a></li>
+                        <li><a href="../HTML/Cursos-HTML/aleman.html">Alemán</a></li>
+                        <li><a href="../HTML/Cursos-HTML/italiano.html">Italiano</a></li>
+                        <li><a href="../HTML/Cursos-HTML/japones.html">Japonés</a></li>
+                        <li><a href="../HTML/Cursos-HTML/portugues.html">Portugués</a></li>
+                        <li><a href="../HTML/Cursos-HTML/ruso.html">Ruso</a></li>
+                        <li><a href="../HTML/Cursos-HTML/chino.html">Chino</a></li>
+                    </ul>
+                </li>
+                <li><a href="../HTML/Productos.html">Productos</a></li>
+                <li><a href="../HTML/Planes.html">Planes</a></li>
+                <li><a href="../HTML/Contacto.html">Contacto</a></li>
+                <li><a href="../HTML/Carrito.html">🛒 Carrito</a></li>
             </ul>
         </nav>
-    </header>
+        <div class="login" id="login-nav-area">
+            <a href="../HTML/Login.html"><button class="btn-login">Login</button></a>
+            <a href="../HTML/Registro.html"><button class="btn-registro">Registro</button></a>
+        </div>
+    </div>
 
     <section class="products">
         <h2>Libros para aprender idiomas</h2>
@@ -34,78 +51,260 @@
         </div>
 
         <div class="product-container">
-
-            <div class="product-card">
-                <img src="img/libro-ingles.jpg" alt="Libro Inglés">
-                <h3>Inglés desde cero</h3>
-                <p>Guía completa para principiantes.</p>
-                <span class="price">$200</span>
-                <button>Comprar</button>
+            <!-- Los productos se cargarán dinámicamente desde la base de datos -->
+            <div style="grid-column: 1/-1; text-align: center; padding: 40px; color: #7b2cbf;">
+                <p style="font-size: 16px; font-weight: 600;">Cargando libros disponibles...</p>
             </div>
-
-            <div class="product-card">
-                <img src="img/libro-frances.jpg" alt="Libro Francés">
-                <h3>Francés básico</h3>
-                <p>Aprende vocabulario esencial.</p>
-                <span class="price">$670</span>
-                <button>Comprar</button>
-            </div>
-
-            <div class="product-card">
-                <img src="img/libro-aleman.jpg" alt="Libro Alemán">
-                <h3>Alemán práctico</h3>
-                <p>Frases y gramática esencial.</p>
-                <span class="price">$900</span>
-                <button>Comprar</button>
-            </div>
-
-            <div class="product-card">
-                <img src="img/libro-japones.jpg" alt="Libro Japonés">
-                <h3>Japonés para principiantes</h3>
-                <p>Aprende hiragana y vocabulario.</p>
-                <span class="price">$220</span>
-                <button>Comprar</button>
-            </div>
-
-            <div class="product-card">
-                <img src="img/libro-italiano.jpg" alt="Libro Italiano">
-                <h3>Diccionario Italiano</h3>
-                <p>Más de 50,000 definiciones y frases.</p>
-                <span class="price">$350</span>
-                <button>Comprar</button>
-            </div>
-
-            <div class="product-card">
-                <img src="img/libro-portugues.jpg" alt="Libro Portugués">
-                <h3>Portugués Fluido</h3>
-                <p>Guía de conversación para viajes.</p>
-                <span class="price">$280</span>
-                <button>Comprar</button>
-            </div>
-
-            <div class="product-card">
-                <img src="img/libro-gramatica.jpg" alt="Gramática">
-                <h3>Gramática Avanzada</h3>
-                <p>Domina las estructuras complejas.</p>
-                <span class="price">$550</span>
-                <button>Comprar</button>
-            </div>
-
-            <div class="product-card">
-                <img src="img/libro-chino.jpg" alt="Libro Chino">
-                <h3>Escritura China</h3>
-                <p>Cuaderno de práctica de caracteres.</p>
-                <span class="price">$310</span>
-                <button>Comprar</button>
-            </div>
-
         </div>
     </section>
 
-    <footer>
-        <p>© 2026 LinguaPro | Plataforma de idiomas</p>
+    <footer class="footer">
+
+
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <h3>IDIOMAS</h3>
+                <ul>
+                    <li>Inglés</li>
+                    <li>Francés</li>
+                    <li>Alemán</li>
+                    <li>Japonés</li>
+                    <li>Italiano</li>
+                    <li>Portugues</li>
+                    <li>Ruso</li>
+                    <li>Chino</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>CURSOS</h3>
+                <ul>
+                    <li>Inglés Profesional</li>
+                    <li>Francés Básico</li>
+                    <li>Alemán Conversacional</li>
+                    <li>Japonés para viajeros</li>
+                    <li>Italiano Gastronómico</li>
+                    <li>Portugues Fluido</li>
+                    <li>Ruso Tecnico</li>
+                    <li>Chino Mandarín</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>PLATAFORMA</h3>
+                <ul>
+                    <li><a href="../HTML/Home.html">Inicio</a></li>
+                    <li><a href="../HTML/Productos.html">Productos</a></li>
+                    <li><a href="../HTML/Planes.html">Planes</a></li>
+                    <li><a href="../HTML/Contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>CUENTA</h3>
+                <ul>
+                    <li><a href="../HTML/Login.html">Iniciar sesión</a></li>
+                    <li><a href="../HTML/Registro.html">Registrarse</a></li>
+                    <li><a href="../HTML/Carrito.html">Carrito</a></li>
+                    <li><a href="../HTML/Pago.html">Pagos</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+         <div class="footer-bottom">
+            <p>© 2026 BridgeUp Plataforma de Idiomas</p>
+ 
+            <a href="#top" class="subir">Subir ▲</a>
+        </div>
+
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const productContainer = document.querySelector('.product-container');
+            const searchInput = document.getElementById('searchInput');
+            let productsData = [];
+            
+            // Crear el contenedor de controles de paginación dinámicamente
+            let paginationContainer = document.getElementById('paginationControls');
+            if (!paginationContainer) {
+                paginationContainer = document.createElement('div');
+                paginationContainer.id = 'paginationControls';
+                paginationContainer.className = 'pagination-container';
+                // Insertar justo después del productContainer
+                productContainer.parentNode.insertBefore(paginationContainer, productContainer.nextSibling);
+            }
+
+            const itemsPerPage = 4;
+            let currentPage = 1;
+            let currentProducts = [];
+
+            // Cargar productos desde la base de datos con cache buster
+            fetch('../../Backend/get_productos.php?v=' + Date.now())
+                .then(res => res.json())
+                .then(data => {
+                    productsData = data;
+                    currentProducts = data;
+                    renderPage(1);
+                })
+                .catch(err => {
+                    console.error("Error al cargar los productos:", err);
+                    productContainer.innerHTML = `
+                        <div style="grid-column: 1/-1; text-align: center; padding: 40px; color: #991b1b;">
+                            <p style="font-size: 18px; font-weight: bold;">Error al conectar con la base de datos.</p>
+                            <p style="font-size: 14px; margin-top: 5px;">Por favor, asegúrate de haber inicializado la base de datos usando db_init.php.</p>
+                        </div>
+                    `;
+                });
+
+            function renderPage(page) {
+                currentPage = page;
+                productContainer.innerHTML = '';
+                paginationContainer.innerHTML = '';
+
+                if (currentProducts.length === 0) {
+                    productContainer.innerHTML = `
+                        <p style="grid-column: 1/-1; text-align: center; color: #777; padding: 40px;">No se encontraron libros.</p>
+                    `;
+                    return;
+                }
+
+                // Calcular rangos
+                const startIndex = (page - 1) * itemsPerPage;
+                const endIndex = Math.min(page * itemsPerPage, currentProducts.length);
+                const pageProducts = currentProducts.slice(startIndex, endIndex);
+
+                // Renderizar productos de la página actual
+                pageProducts.forEach(prod => {
+                    // Limpiar y resolver la ruta de la imagen
+                    let imgPath = prod.imagen;
+                    if (imgPath.startsWith('/Frontend/')) {
+                        imgPath = '..' + imgPath.substring(9);
+                    }
+
+                    const card = document.createElement('div');
+                    card.className = 'product-card';
+                    card.innerHTML = `
+                        <img src="${imgPath}" alt="${prod.titulo}" onerror="this.onerror=null; this.src='../IMG/libro-ingles-cero.jpg';">
+                        <h3>${prod.titulo}</h3>
+                        <p>${prod.descripcion}</p>
+                        <span class="price">$${parseFloat(prod.precio).toFixed(0)}</span>
+                        <button class="btn-buy">Comprar</button>
+                    `;
+
+                    // Manejador del botón Comprar
+                    const buyBtn = card.querySelector('.btn-buy');
+                    buyBtn.addEventListener('click', () => {
+                        const title = prod.titulo;
+                        const price = parseFloat(prod.precio);
+                        const img = imgPath;
+
+                        // Obtener carrito actual
+                        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                        // Verificar si ya está
+                        const existing = cart.find(item => item.title === title);
+                        if (existing) {
+                            existing.quantity += 1;
+                        } else {
+                            cart.push({ title, price, img, quantity: 1 });
+                        }
+                        localStorage.setItem('cart', JSON.stringify(cart));
+
+                        // Notificación premium
+                        showNotification(`¡"${title}" agregado al carrito!`);
+                    });
+
+                    productContainer.appendChild(card);
+                });
+
+                // Renderizar controles de paginación
+                const totalPages = Math.ceil(currentProducts.length / itemsPerPage);
+                if (totalPages > 1) {
+                    // Botón Anterior
+                    const prevBtn = document.createElement('button');
+                    prevBtn.className = 'pagination-btn';
+                    prevBtn.textContent = '« Ant';
+                    prevBtn.disabled = page === 1;
+                    prevBtn.addEventListener('click', () => renderPage(page - 1));
+                    paginationContainer.appendChild(prevBtn);
+
+                    // Números de Página
+                    for (let i = 1; i <= totalPages; i++) {
+                        const pageBtn = document.createElement('button');
+                        pageBtn.className = 'pagination-btn' + (i === page ? ' active' : '');
+                        pageBtn.textContent = i;
+                        pageBtn.addEventListener('click', () => renderPage(i));
+                        paginationContainer.appendChild(pageBtn);
+                    }
+
+                    // Botón Siguiente
+                    const nextBtn = document.createElement('button');
+                    nextBtn.className = 'pagination-btn';
+                    nextBtn.textContent = 'Sig »';
+                    nextBtn.disabled = page === totalPages;
+                    nextBtn.addEventListener('click', () => renderPage(page + 1));
+                    paginationContainer.appendChild(nextBtn);
+                }
+            }
+
+            // Filtrar / Buscar libros
+            searchInput.addEventListener('input', () => {
+                const query = searchInput.value.toLowerCase().trim();
+                currentProducts = productsData.filter(prod => 
+                    prod.titulo.toLowerCase().includes(query) || 
+                    prod.descripcion.toLowerCase().includes(query)
+                );
+                renderPage(1); // Reiniciar a la página 1 en cada búsqueda
+            });
+
+            function showNotification(msg) {
+                const oldNotif = document.getElementById('cart-notif');
+                if (oldNotif) oldNotif.remove();
+
+                const notif = document.createElement('div');
+                notif.id = 'cart-notif';
+                notif.textContent = msg;
+                notif.style.position = 'fixed';
+                notif.style.bottom = '20px';
+                notif.style.right = '20px';
+                notif.style.background = '#7b2cbf';
+                notif.style.color = 'white';
+                notif.style.padding = '12px 24px';
+                notif.style.borderRadius = '8px';
+                notif.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+                notif.style.zIndex = '1000';
+                notif.style.fontFamily = 'Poppins, sans-serif';
+                notif.style.fontSize = '14px';
+                notif.style.animation = 'slideIn 0.3s ease';
+                document.body.appendChild(notif);
+
+                setTimeout(() => {
+                    notif.style.animation = 'fadeOut 0.3s ease';
+                    setTimeout(() => notif.remove(), 300);
+                }, 3000);
+            }
+
+            // Agregar estilos CSS para la animación si no existen
+            if (!document.getElementById('notif-styles')) {
+                const style = document.createElement('style');
+                style.id = 'notif-styles';
+                style.textContent = `
+                    @keyframes slideIn {
+                        from { transform: translateY(50px); opacity: 0; }
+                        to { transform: translateY(0); opacity: 1; }
+                    }
+                    @keyframes fadeOut {
+                        from { opacity: 1; }
+                        to { opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+        });
+    </script>
+    <script src="navbar.js"></script>
 </body>
 
 </html>

@@ -4,25 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso de Inglés | LinguaPro</title>
-    <link rel="stylesheet" href="/Frontend/CSS/Cursos-CSS/ingles.css">
+    <title>Curso de Inglés |   BridgeUp</title>
+    <link rel="stylesheet" href="../../CSS/Cursos-CSS/ingles.css">
+    <link rel="stylesheet" href="../../CSS/global-navbar.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <header class="header">
-        <h1>LinguaPro</h1>
-        <nav>
-            <ul>
-                <li><a href="/Frontend/HTML/Home.html">Inicio</a></li>
-                <li><a href="/Frontend/HTML/Cursos.html">Cursos</a></li>
-                <li><a href="/Frontend/HTML/Productos.html">Productos</a></li>
-                <li><a href="/Frontend/HTML/Planes.html">Planes</a></li>
-                <li><a href="/Frontend/HTML/Contacto.html">Contacto</a></li>
+    <div class="header-content">
+        <a href="../../HTML/Home.html" class="logo">BridgeUp</a>
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="../../HTML/Home.html">Inicio</a></li>
+                <li class="submenu">
+                    <a href="#">Cursos ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="../Cursos-HTML/ingles.html">Inglés</a></li>
+                        <li><a href="../Cursos-HTML/frances.html">Francés</a></li>
+                        <li><a href="../Cursos-HTML/aleman.html">Alemán</a></li>
+                        <li><a href="../Cursos-HTML/italiano.html">Italiano</a></li>
+                        <li><a href="../Cursos-HTML/japones.html">Japonés</a></li>
+                        <li><a href="../Cursos-HTML/portugues.html">Portugués</a></li>
+                        <li><a href="../Cursos-HTML/ruso.html">Ruso</a></li>
+                        <li><a href="../Cursos-HTML/chino.html">Chino</a></li>
+                    </ul>
+                </li>
+                <li><a href="../../HTML/Productos.html">Productos</a></li>
+                <li><a href="../../HTML/Planes.html">Planes</a></li>
+                <li><a href="../../HTML/Contacto.html">Contacto</a></li>
+                <li><a href="../../HTML/Carrito.html">🛒 Carrito</a></li>
             </ul>
         </nav>
-    </header>
+        <div class="login" id="login-nav-area">
+            <a href="../../HTML/Login.html"><button class="btn-login">Login</button></a>
+            <a href="../../HTML/Registro.html"><button class="btn-registro">Registro</button></a>
+        </div>
+    </div>
 
     <section class="courses">
 
@@ -31,14 +49,58 @@
         <div class="course-container">
 
             <div class="course-card">
+                <h3>Inglés <br>Desde Cero</h3>
+                <img src="../../IMG/ingles-cero.jpg">
+                <p>
+                    <strong>Ideal para:</strong>Principiantes.<br>
+                    Y uso cotidiano.
+                </p>
+                <div class="info">
+                    <span class="level">Certificación A1/A2</span>
+                    <p><strong>Meta:</strong>Desarrollar las habilidades del: Speaking, Reading, Listening y Writing</p>
+                    <p><strong>Incluye:</strong> Practicas orales con instructor</p>
+                </div>
+                <button class="subscribe">Comenzar Mi Curso</button>
+            </div>
+
+            
+            <div class="course-card">
+                <h3>Inglés <br>Conversacional</h3>
+                <img src="../../IMG/ingles-conversacional.jpg">
+                <p>
+                    <strong>Ideal para:</strong> Hablar y entender el idioma en situaciones reales<br>
+                </p>
+                <div class="info">
+                    <span class="level">Certificación A2/C1</span>
+                    <p><strong>Meta:</strong>Lograr fluidez y confianza al comunicarse</p>
+                    <p><strong>Incluye:</strong> Practicas intensivas de conversacion y simulacion en situaciones reales</p>
+                </div>
+                <button class="subscribe">Comenzar Mi Curso</button>
+            </div>
+
+             <div class="course-card">
+                <h3>Inglés <br>Tecnico</h3>
+                <img src="../../IMG/ingles-tecnico.jpg">
+                <p>
+                    <strong>Ideal para si:</strong> Estudias o trabajas en áreas como programación, ingeniería, medicina, negocios o tecnología<br>
+                </p>
+                <div class="info">
+                    <span class="level">Certificación B1/B12</span>
+                    <p><strong>Meta:</strong>Comprender textos técnicos (manuales, artículos, documentación). Escribir correos o reportes profesionales</p>
+                    <p><strong>Incluye:</strong> Gramática aplicada al contexto profesional, Redacción de correos profesionales, Simulación de entrevistas</p>
+                </div>
+                <button class="subscribe">Comenzar Mi Curso</button>
+            </div>
+
+            <div class="course-card">
                 <h3>Inglés para <br> Viajeros y Exploradores</h3>
-                <img src="img/ingles.jpg">
+                <img src="../../IMG/ingles-viajeros.jpg">
                 <p>
                     <strong>Ideal para:</strong> No quedarte mudo en el aeropuerto o restaurante.<br>
                     Aprende a presentarte, pedir direcciones y manejar situaciones básicas de viaje con total confianza.
                 </p>
                 <div class="info">
-                    <span class="level">Certificación A1/A2</span>
+                    <span class="level">Certificación B1/B2</span>
                     <p><strong>Meta:</strong> Comunicación Básica</p>
                     <p><strong>Incluye:</strong> Guía de viaje PDF</p>
                 </div>
@@ -47,7 +109,7 @@
 
             <div class="course-card">
                 <h3>Inglés para <br> Negocios y Networking</h3>
-                <img src="img/ingles.jpg">
+                <img src="../../IMG/ingles-negocios.jpg">
                 <p>
                     <strong>Ideal para:</strong> Entrevistas laborales y reuniones internacionales.<br>
                     Debate ideas, escribe correos profesionales y socializa de forma fluida sin traducir en tu mente.
@@ -62,7 +124,7 @@
 
             <div class="course-card">
                 <h3>Maestría en <br> Inglés Nativo y Académico</h3>
-                <img src="img/ingles.jpg">
+                <img src="../../IMG/ingles-maestria.jpg">
                 <p>
                     <strong>Ideal para:</strong> Vivir en el extranjero o estudiar posgrados.<br>
                     Domina modismos, lenguaje técnico y literatura. Exprésate con la misma complejidad que un nativo.
@@ -80,8 +142,9 @@
     </section>
 
     <footer>
-        <p>© 2026 LinguaPro | Domina el mundo a través de sus idiomas</p>
+        <p>© 2026 BridgeUp | Domina el mundo a través de sus idiomas</p>
     </footer>
 
+    <script src="cursos.js"></script>
 </body>
 </html>

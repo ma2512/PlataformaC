@@ -5,22 +5,50 @@ box-sizing:border-box;
 font-family:'Poppins', sans-serif;
 }
 
+html {
+scroll-behavior: smooth;
+overflow-y: auto;
+}
+
 body{
-height:100vh;
+min-height:100vh;
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
+padding: 40px 20px;
 /* Gradiente usando los morados más intensos (Fila 2) */
 background:linear-gradient(135deg, #140842, #3c096c);
+overflow-y: auto;
+}
+
+/* Personalización del Scrollbar */
+::-webkit-scrollbar {
+width: 10px;
+}
+::-webkit-scrollbar-track {
+background: #140842;
+}
+::-webkit-scrollbar-thumb {
+background: #7b2cbf;
+border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+background: #9d4edd;
 }
 
 /* CONTENEDOR */
+
+.register-container{
+width:100%;
+max-width:520px;
+}
 
 .register-box{
 background:white;
 padding:40px;
 border-radius:10px;
-width:350px;
+width: 100%;
 box-shadow:0 10px 30px rgba(0,0,0,0.2);
 text-align:center;
 }

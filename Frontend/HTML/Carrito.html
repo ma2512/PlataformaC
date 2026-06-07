@@ -4,74 +4,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito | LinguaPro</title>
-    <link rel="stylesheet" href="/Frontend/CSS/carrito.css">
+    <title>Carrito | BridgeUp</title>
+    <link rel="stylesheet" href="../CSS/carrito.css">
+    <link rel="stylesheet" href="../CSS/global-navbar.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <header class="header">
-        <h1>LinguaPro</h1>
-        <nav>
-            <ul>
-                <li><a href="/Frontend/HTML/Home.html">Inicio</a></li>
-                <li><a href="/Frontend/HTML/Productos.html">Productos</a></li>
-                <li><a href="/Frontend/HTML/Carrito.html">🛒 Carrito</a></li>
+    <div class="header-content">
+        <a href="../HTML/Home.html" class="logo">BridgeUp</a>
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="../HTML/Home.html">Inicio</a></li>
+                <li class="submenu">
+                    <a href="#">Cursos ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="../HTML/Cursos-HTML/ingles.html">Inglés</a></li>
+                        <li><a href="../HTML/Cursos-HTML/frances.html">Francés</a></li>
+                        <li><a href="../HTML/Cursos-HTML/aleman.html">Alemán</a></li>
+                        <li><a href="../HTML/Cursos-HTML/italiano.html">Italiano</a></li>
+                        <li><a href="../HTML/Cursos-HTML/japones.html">Japonés</a></li>
+                        <li><a href="../HTML/Cursos-HTML/portugues.html">Portugués</a></li>
+                        <li><a href="../HTML/Cursos-HTML/ruso.html">Ruso</a></li>
+                        <li><a href="../HTML/Cursos-HTML/chino.html">Chino</a></li>
+                    </ul>
+                </li>
+                <li><a href="../HTML/Productos.html">Productos</a></li>
+                <li><a href="../HTML/Planes.html">Planes</a></li>
+                <li><a href="../HTML/Contacto.html">Contacto</a></li>
+                <li><a href="../HTML/Carrito.html">🛒 Carrito</a></li>
             </ul>
         </nav>
-    </header>
+        <div class="login" id="login-nav-area">
+            <a href="../HTML/Login.html"><button class="btn-login">Login</button></a>
+            <a href="../HTML/Registro.html"><button class="btn-registro">Registro</button></a>
+        </div>
+    </div>
 
     <section class="cart">
         <h2>Tu carrito de compras</h2>
 
         <div id="cart-items">
-            <div class="cart-item">
-                <div style="display: flex; align-items: center; gap: 20px;">
-                    <img src="img/libro-ingles.jpg" alt="Libro Inglés">
-                    <div class="item-info">
-                        <h4>Inglés desde cero (Libro)</h4>
-                        <p>Cantidad: 1</p>
-                        <button class="btn-remove">Eliminar producto</button>
-                    </div>
-                </div>
-                <div class="item-price">
-                    <p style="font-weight: 600; color: #5a189a;">$200.00</p>
-                </div>
-            </div>
-
-            <div class="cart-item">
-                <div style="display: flex; align-items: center; gap: 20px;">
-                    <img src="img/libro-frances.jpg" alt="Libro Francés">
-                    <div class="item-info">
-                        <h4>Guía de Francés Básico</h4>
-                        <p>Cantidad: 1</p>
-                        <button class="btn-remove">Eliminar producto</button>
-                    </div>
-                </div>
-                <div class="item-price">
-                    <p style="font-weight: 600; color: #5a189a;">$670.00</p>
-                </div>
-            </div>
+            <!-- Los productos se cargarán dinámicamente aquí -->
         </div>
 
         <div class="total">
             <div class="back-link">
-                <a href="/Frontend/HTML/Productos.html">← Continuar comprando</a>
+                <a href="../HTML/Productos.html">← Continuar comprando</a>
             </div>
             <div style="text-align: right;">
-                <p style="font-size: 14px; color: #6c757d; margin-bottom: 5px;">Subtotal: $870.00</p>
-                <h3>Total: $870.00</h3>
-                <a href="/Frontend/HTML/Pago.html">
+                <p id="cart-subtotal" style="font-size: 14px; color: #6c757d; margin-bottom: 5px;">Subtotal: $0.00</p>
+                <h3 id="cart-total">Total: $0.00</h3>
+                <a href="../HTML/Pago.html" id="btn-checkout">
                     <button>Finalizar Compra</button>
                 </a>
             </div>
         </div>
     </section>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cartItemsContainer = document.getElementById("cart-items");
+            const subtotalEl = document.getElementById("cart-subtotal");
+            const totalEl = document.getElementById("cart-total");
+            const btnCheckout = document.getElementById("btn-checkout");
+
+            function renderCart() {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cartItemsContainer.innerHTML = "";
+
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = `
+                        <div style="text-align: center; padding: 40px; color: #6c757d;">
+                            <p style="font-size: 18px; margin-bottom: 20px;">Tu carrito de compras está vacío.</p>
+                            <a href="../HTML/Productos.html" style="color: #7b2cbf; text-decoration: none; font-weight: bold;">Explorar libros →</a>
+                        </div>
+                    `;
+                    subtotalEl.textContent = "Subtotal: $0.00";
+                    totalEl.textContent = "Total: $0.00";
+                    btnCheckout.style.pointerEvents = "none";
+                    btnCheckout.querySelector("button").style.background = "#ccc";
+                    btnCheckout.querySelector("button").style.cursor = "not-allowed";
+                    return;
+                }
+
+                btnCheckout.style.pointerEvents = "auto";
+                btnCheckout.querySelector("button").style.background = "#7b2cbf";
+                btnCheckout.querySelector("button").style.cursor = "pointer";
+
+                let total = 0;
+                let description = [];
+
+                cart.forEach((item, index) => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    description.push(`${item.title} (x${item.quantity})`);
+
+                    const div = document.createElement("div");
+                    div.className = "cart-item";
+                    div.innerHTML = `
+                        <div style="display: flex; align-items: center; gap: 20px;">
+                            <img src="${item.img}" alt="${item.title}" style="width: 50px; height: 70px; object-fit: cover; border-radius: 4px;">
+                            <div class="item-info">
+                                <h4>${item.title}</h4>
+                                <p>Cantidad: ${item.quantity}</p>
+                                <button class="btn-remove" data-index="${index}" style="background: none; border: none; color: #e63946; cursor: pointer; font-size: 12px; padding: 0; text-decoration: underline;">Eliminar producto</button>
+                            </div>
+                        </div>
+                        <div class="item-price">
+                            <p style="font-weight: 600; color: #5a189a;">$${itemTotal.toFixed(2)}</p>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(div);
+                });
+
+                subtotalEl.textContent = `Subtotal: $${total.toFixed(2)}`;
+                totalEl.textContent = `Total: $${total.toFixed(2)}`;
+
+                // Guardar datos para procesar el pago
+                localStorage.setItem('checkoutTotal', total.toFixed(2));
+                localStorage.setItem('checkoutDescription', description.join(', '));
+            }
+
+            cartItemsContainer.addEventListener("click", (e) => {
+                if (e.target.classList.contains("btn-remove")) {
+                    const index = parseInt(e.target.getAttribute("data-index"));
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    cart.splice(index, 1);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    renderCart();
+                }
+            });
+
+            renderCart();
+        });
+    </script>
+
     <footer>
-        <p>© 2026 LinguaPro | Compra segura y protegida</p>
+        <p>© 2026 BridgeUp | Compra segura y protegida</p>
     </footer>
 
+    <script src="navbar.js"></script>
 </body>
 </html>

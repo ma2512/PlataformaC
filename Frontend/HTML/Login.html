@@ -4,9 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | LinguaPro</title>
-    <link rel="stylesheet" href="/Frontend/CSS/login.css">
+    <title>Login | BridgeUp</title>
+    <link rel="stylesheet" href="../CSS/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .login-tabs {
+            display: flex;
+            border-bottom: 2px solid #e2e8f0;
+            margin-bottom: 25px;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 10px;
+            background: none;
+            border: none;
+            font-weight: 600;
+            font-size: 15px;
+            color: #6c757d;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+        .tab-btn.active {
+            color: #7b2cbf;
+            border-bottom: 2px solid #7b2cbf;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,39 +38,126 @@
     <div class="login-container">
 
         <div class="login-box">
-            <h2>Iniciar Sesión</h2>
-            <p style="text-align: center; color: #6c757d; font-size: 14px; margin-bottom: 20px;">
+            <div class="login-tabs">
+                <button type="button" class="tab-btn active" id="tab-student">Estudiante</button>
+                <button type="button" class="tab-btn" id="tab-admin">Administrador</button>
+            </div>
+
+            <h2 id="login-title">Iniciar Sesión</h2>
+            <p id="login-subtitle" style="text-align: center; color: #6c757d; font-size: 14px; margin-bottom: 20px;">
                 ¡Qué bueno verte de nuevo! Por favor, ingresa tus datos.
             </p>
 
-            <form>
+            <div id="alert-message" style="display: none; padding: 10px; border-radius: 8px; font-size: 14px; margin-bottom: 15px; text-align: center;"></div>
+            <script>
+                const urlParams = new URLSearchParams(window.location.search);
+                const error = urlParams.get('error');
+                const registro = urlParams.get('registro');
+                const alertDiv = document.getElementById('alert-message');
+                
+                if (error) {
+                    alertDiv.style.display = 'block';
+                    alertDiv.style.background = '#fee2e2';
+                    alertDiv.style.color = '#991b1b';
+                    alertDiv.style.border = '1px solid #fca5a5';
+                    if (error === 'campos_vacios') alertDiv.textContent = 'Por favor, completa todos los campos.';
+                    else if (error === 'credenciales_incorrectas') alertDiv.textContent = 'Correo o contraseña incorrectos.';
+                    else if (error === 'no_admin') alertDiv.textContent = 'Este correo no pertenece a una cuenta de administrador.';
+                    else if (error === 'necesita_login') alertDiv.textContent = 'Inicia sesión como administrador para acceder a esa sección.';
+                } else if (registro === 'exito') {
+                    alertDiv.style.display = 'block';
+                    alertDiv.style.background = '#d1fae5';
+                    alertDiv.style.color = '#065f46';
+                    alertDiv.style.border = '1px solid #a7f3d0';
+                    alertDiv.textContent = '¡Cuenta creada con éxito! Inicia sesión para continuar.';
+                }
+            </script>
+
+            <form id="login-form" action="../../Backend/login.php" method="POST">
                 <div class="input-group">
                     <label>Correo electrónico</label>
-                    <input type="email" placeholder="ejemplo@email.com" required>
+                    <input type="email" name="email" placeholder="ejemplo@email.com" required>
                 </div>
 
                 <div class="input-group">
                     <label>Contraseña</label>
-                    <input type="password" placeholder="********" required>
-                    <a href="#" style="font-size: 12px; color: #7b2cbf; text-align: right; margin-top: 5px; text-decoration: none;">¿Olvidaste tu contraseña?</a>
+                    <input type="password" name="password" placeholder="********" required>
+                    <a href="#" id="forgot-password-link" style="display: block; font-size: 12px; color: #7b2cbf; text-align: right; margin-top: 5px; text-decoration: none;">¿Olvidaste tu contraseña?</a>
                 </div>
 
-                <button type="button" class="login-btn" onclick="window.location.href='/Frontend/HTML/Dashboard.html'">
+                <button type="submit" class="login-btn">
                     Entrar a mi cuenta
                 </button>
 
-                <p class="register-link">
-                    ¿Aún no eres parte de LinguaPro? <br>
-                    <a href="/Frontend/HTML/Registro.html">Crea una cuenta gratis aquí</a>
+                <p class="register-link" id="student-register-link">
+                    ¿Aún no eres parte de BridgeUp? <br>
+                    <a href="../HTML/Registro.html">Crea una cuenta gratis aquí</a>
                 </p>
             </form>
         </div>
 
+        <footer style="margin-top: 30px; color: rgba(255,255,255,0.7); font-size: 12px; text-align: center;">
+            © 2026 BridgeUp | Aprende sin límites
+        </footer>
+
     </div>
 
-    <footer style="position: absolute; bottom: 20px; color: rgba(255,255,255,0.7); font-size: 12px;">
-        © 2026 LinguaPro | Aprende sin límites
-    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const tabStudent = document.getElementById("tab-student");
+            const tabAdmin = document.getElementById("tab-admin");
+            const loginForm = document.getElementById("login-form");
+            const loginTitle = document.getElementById("login-title");
+            const loginSubtitle = document.getElementById("login-subtitle");
+            const studentRegisterLink = document.getElementById("student-register-link");
+            const forgotPasswordLink = document.getElementById("forgot-password-link");
+
+            function setRole(role) {
+                if (role === "admin") {
+                    tabStudent.classList.remove("active");
+                    tabAdmin.classList.add("active");
+                    loginForm.action = "../../Backend/admin_login.php";
+                    loginTitle.textContent = "Iniciar Sesión (Admin)";
+                    loginSubtitle.textContent = "Ingresa tus credenciales de administrador de BridgeUp.";
+                    studentRegisterLink.style.display = "none";
+                    forgotPasswordLink.style.display = "none";
+                } else {
+                    tabAdmin.classList.remove("active");
+                    tabStudent.classList.add("active");
+                    loginForm.action = "../../Backend/login.php";
+                    loginTitle.textContent = "Iniciar Sesión";
+                    loginSubtitle.textContent = "¡Qué bueno verte de nuevo! Por favor, ingresa tus datos.";
+                    studentRegisterLink.style.display = "block";
+                    forgotPasswordLink.style.display = "inline-block";
+                }
+            }
+
+            tabStudent.addEventListener("click", () => {
+                // Limpiar query params de error al cambiar de tab para mejor UX
+                if (window.location.search) {
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                    document.getElementById('alert-message').style.display = 'none';
+                }
+                setRole("student");
+            });
+
+            tabAdmin.addEventListener("click", () => {
+                if (window.location.search) {
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                    document.getElementById('alert-message').style.display = 'none';
+                }
+                setRole("admin");
+            });
+
+            // Leer parámetro de rol en URL
+            const roleUrl = new URLSearchParams(window.location.search).get("role");
+            if (roleUrl === "admin") {
+                setRole("admin");
+            } else {
+                setRole("student");
+            }
+        });
+    </script>
 
 </body>
 </html>

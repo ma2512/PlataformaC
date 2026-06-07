@@ -1,0 +1,111 @@
+/* ===== BARRA DE NAVEGACIÓN GLOBAL ===== */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 600;
+    color: #7b2cbf; /* Morado vibrante */
+    text-decoration: none;
+}
+
+.navbar {
+    display: block;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #253441;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #7b2cbf;
+}
+
+/* SUBMENÚ DROPDOWN */
+.submenu {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 15px;
+    border-radius: 6px;
+    min-width: 180px;
+}
+
+.dropdown li {
+    margin: 10px 0;
+}
+
+.dropdown a {
+    font-size: 14px;
+    display: block;
+}
+
+.submenu:hover .dropdown {
+    display: block;
+}
+
+/* BOTONES LOGIN / REGISTRO */
+.login {
+    display: flex;
+    gap: 10px;
+}
+
+.login button {
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-login {
+    background: transparent;
+    border: 1px solid #7b2cbf;
+    color: #7b2cbf;
+}
+
+.btn-login:hover {
+    background: #f3e5f5;
+}
+
+.btn-registro {
+    background: #7b2cbf;
+    color: white;
+    border: none;
+}
+
+.btn-registro:hover {
+    background: #5a189a;
+}
